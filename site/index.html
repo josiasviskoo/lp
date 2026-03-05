@@ -1,594 +1,226 @@
 <!DOCTYPE html>
 <html lang="pt-BR" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#0a0a0a" />
-  <title>Viskoo | Sites Profissionais por Assinatura</title>
-  <meta name="description" content="O site do seu negocio, sem taxa de configuracao e sem dor de cabeca. Design Premium, Hospedagem Inclusa e Suporte Ilimitado por uma mensalidade que cabe no seu bolso." />
-
-  <!-- Google Fonts: Inter -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-
-  <!-- Tailwind CSS Play CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            sans: ['Inter', 'system-ui', 'sans-serif'],
-          },
-          colors: {
-            background: '#0a0a0a',
-            foreground: '#f5f5f5',
-            card: '#111111',
-            'card-foreground': '#f5f5f5',
-            primary: '#ff6b00',
-            'primary-foreground': '#ffffff',
-            secondary: '#1a1a1a',
-            'secondary-foreground': '#f5f5f5',
-            muted: '#1a1a1a',
-            'muted-foreground': '#a3a3a3',
-            border: '#262626',
-          },
-        },
-      },
-    }
-  </script>
-
-  <!-- Lucide Icons -->
-  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
-
-  <style>
-    *, *::before, *::after {
-      border-color: #262626;
-    }
-
-    @keyframes fade-in-up {
-      from { opacity: 0; transform: translateY(30px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    @keyframes glow-pulse {
-      0%, 100% { box-shadow: 0 0 20px rgba(255,107,0,0.3), 0 0 40px rgba(255,107,0,0.1); }
-      50% { box-shadow: 0 0 30px rgba(255,107,0,0.5), 0 0 60px rgba(255,107,0,0.2); }
-    }
-
-    .animate-fade-in-up {
-      animation: fade-in-up 0.6s ease-out forwards;
-    }
-    .animate-glow-pulse {
-      animation: glow-pulse 2s ease-in-out infinite;
-    }
-
-    .glass-card {
-      background: rgba(17, 17, 17, 0.6);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border: 1px solid rgba(255, 255, 255, 0.06);
-    }
-    .glass-card-hover:hover {
-      background: rgba(17, 17, 17, 0.8);
-      border-color: rgba(255, 107, 0, 0.2);
-    }
-
-    /* Scroll reveal */
-    .sr-hidden {
-      opacity: 0;
-      transform: translateY(30px);
-      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-    }
-    .sr-visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Viskoo | Sites que Vendem. Assinaturas que Entregam.</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #080808; color: #F0F0F0; }
+        h1, h2, h3, .font-sora { font-family: 'Sora', sans-serif; }
+        .orange-gradient { background: linear-gradient(135deg, #FF6B00 0%, #FF8C2A 100%); }
+        .text-orange-glow { color: #FF6B00; text-shadow: 0 0 15px rgba(255, 107, 0, 0.3); }
+        .border-orange-dim { border-color: rgba(255, 107, 0, 0.2); }
+        .bg-card { background-color: #0E0E0E; border: 1px solid rgba(255,255,255,0.07); }
+        .bg-card:hover { border-color: rgba(255, 107, 0, 0.4); transform: translateY(-4px); transition: all 0.3s ease; }
+        .hero-glow { position: absolute; top: -200px; left: 50%; transform: translateX(-50%); width: 800px; height: 800px; background: radial-gradient(circle, rgba(255,107,0,0.12) 0%, transparent 70%); pointer-events: none; z-index: 0; }
+        .btn-animate { transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1); }
+        .btn-animate:hover { transform: scale(1.05); box-shadow: 0 10px 40px rgba(255,107,0,0.4); }
+    </style>
 </head>
-<body class="bg-background text-foreground font-sans antialiased">
+<body class="overflow-x-hidden">
 
-  <!-- ═══════════ NAVBAR ═══════════ -->
-  <nav class="fixed top-0 left-0 right-0 z-50 border-b border-border/50 bg-background/80 backdrop-blur-xl">
-    <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-      <a href="#" class="text-xl font-bold tracking-tight text-foreground">Viskoo</a>
-
-      <div class="hidden md:flex items-center gap-8">
-        <a href="#beneficios" class="text-sm text-muted-foreground transition-colors hover:text-foreground">Beneficios</a>
-        <a href="#planos" class="text-sm text-muted-foreground transition-colors hover:text-foreground">Planos</a>
-        <a href="#incluso" class="text-sm text-muted-foreground transition-colors hover:text-foreground">O que esta incluso</a>
-        <a href="#faq" class="text-sm text-muted-foreground transition-colors hover:text-foreground">FAQ</a>
-        <a href="#planos" class="rounded-lg bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground transition-all hover:brightness-110 animate-glow-pulse">
-          Escolher meu Plano
+    <nav class="fixed w-full z-50 bg-black/70 backdrop-blur-xl border-b border-white/5 py-4 px-6 md:px-12 flex justify-between items-center">
+        <div class="text-2xl font-extrabold tracking-tighter text-white">VISKOO<span class="text-[#FF6B00]">.</span></div>
+        <div class="hidden md:flex gap-8 text-sm font-medium text-gray-400">
+            <a href="#recursos" class="hover:text-white transition">Recursos</a>
+            <a href="#depoimentos" class="hover:text-white transition">Depoimentos</a>
+            <a href="#planos" class="hover:text-white transition">Planos</a>
+        </div>
+        <a href="https://viskoo.com.br/whatsapp/" target="_blank" class="bg-[#25D366] hover:bg-[#1ebe5d] text-white px-6 py-2.5 rounded-full text-sm font-bold flex items-center gap-2 transition btn-animate">
+            Falar Agora
         </a>
-      </div>
+    </nav>
 
-      <button id="mobile-toggle" class="text-foreground md:hidden" aria-label="Abrir menu">
-        <i data-lucide="menu" class="w-6 h-6"></i>
-      </button>
+    <section class="relative min-height-[100vh] flex flex-col items-center justify-center text-center px-6 pt-32 pb-20">
+        <div class="hero-glow"></div>
+        <div class="relative z-10">
+            <div class="inline-flex items-center gap-2 bg-[#FF6B00]/10 border border-[#FF6B00]/30 text-[#FF8C2A] px-4 py-1.5 rounded-full text-xs font-bold mb-8 uppercase tracking-widest animate-pulse">
+                ✦ +500 sites entregues com sucesso
+            </div>
+            <h1 class="text-5xl md:text-7xl lg:text-8xl font-extrabold tracking-tighter leading-none mb-8">
+                Seu site profissional.<br>
+                <span class="orange-gradient bg-clip-text text-transparent italic">Assinado, entregue,</span><br>
+                crescendo.
+            </h1>
+            <p class="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto mb-12 font-light">
+                Pare de perder clientes para concorrentes com sites melhores. Tenha um design exclusivo, performance real e suporte contínuo em um plano de assinatura simples.
+            </p>
+            <div class="flex flex-col md:flex-row gap-4 justify-center items-center">
+                <a href="#planos" class="orange-gradient text-white px-10 py-5 rounded-full font-bold text-lg flex items-center gap-3 btn-animate">
+                    Ver Planos e Preços
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+                <p class="text-sm text-gray-500 italic">Sem taxa de setup • Cancele quando quiser</p>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mt-24 relative z-10 w-full max-w-5xl border-t border-white/5 pt-12">
+            <div><div class="text-4xl font-bold text-white mb-1">500+</div><div class="text-xs text-gray-500 uppercase tracking-widest">Sites Entregues</div></div>
+            <div><div class="text-4xl font-bold text-white mb-1">99%</div><div class="text-xs text-gray-500 uppercase tracking-widest">Aprovação Real</div></div>
+            <div><div class="text-4xl font-bold text-white mb-1">24h</div><div class="text-xs text-gray-500 uppercase tracking-widest">Monitoramento</div></div>
+            <div><div class="text-4xl font-bold text-white mb-1">0%</div><div class="text-xs text-gray-500 uppercase tracking-widest">Taxa de Setup</div></div>
+        </div>
+    </section>
+
+    <div class="bg-card border-y border-white/5 py-6 overflow-hidden flex whitespace-nowrap">
+        <div class="flex gap-12 animate-marquee items-center text-sm font-bold text-gray-500 uppercase tracking-widest">
+            <span>SEO Otimizado</span> <div class="w-1.5 h-1.5 rounded-full bg-[#FF6B00]"></div>
+            <span>Design Exclusivo</span> <div class="w-1.5 h-1.5 rounded-full bg-[#FF6B00]"></div>
+            <span>Suporte Ilimitado</span> <div class="w-1.5 h-1.5 rounded-full bg-[#FF6B00]"></div>
+            <span>E-mail Profissional</span> <div class="w-1.5 h-1.5 rounded-full bg-[#FF6B00]"></div>
+            <span>Hospedagem Inclusa</span> <div class="w-1.5 h-1.5 rounded-full bg-[#FF6B00]"></div>
+            <span>WhatsApp Integrado</span> <div class="w-1.5 h-1.5 rounded-full bg-[#FF6B00]"></div>
+        </div>
     </div>
 
-    <!-- Mobile menu -->
-    <div id="mobile-menu" class="hidden border-t border-border/50 bg-background/95 backdrop-blur-xl md:hidden">
-      <div class="flex flex-col gap-4 px-6 py-6">
-        <a href="#beneficios" class="text-sm text-muted-foreground transition-colors hover:text-foreground mobile-link">Beneficios</a>
-        <a href="#planos" class="text-sm text-muted-foreground transition-colors hover:text-foreground mobile-link">Planos</a>
-        <a href="#incluso" class="text-sm text-muted-foreground transition-colors hover:text-foreground mobile-link">O que esta incluso</a>
-        <a href="#faq" class="text-sm text-muted-foreground transition-colors hover:text-foreground mobile-link">FAQ</a>
-        <a href="#planos" class="mt-2 rounded-lg bg-primary px-5 py-2.5 text-center text-sm font-semibold text-primary-foreground transition-all hover:brightness-110 mobile-link">
-          Escolher meu Plano
+    <section id="recursos" class="py-24 px-6 md:px-12 max-w-7xl mx-auto">
+        <div class="text-center mb-16">
+            <span class="text-[#FF6B00] text-sm font-bold tracking-[0.3em] uppercase">Por que a Viskoo?</span>
+            <h2 class="text-4xl md:text-5xl font-bold mt-4 tracking-tight">Tudo que seu site precisa<br>para <span class="text-[#FF6B00]">converter</span>.</h2>
+        </div>
+        <div class="grid md:grid-cols-3 gap-6">
+            <div class="bg-card p-8 rounded-[32px]">
+                <div class="w-12 h-12 bg-[#FF6B00]/20 rounded-2xl flex items-center justify-center text-2xl mb-6">🎨</div>
+                <h3 class="text-xl font-bold mb-3 text-white">Layout 100% Exclusivo</h3>
+                <p class="text-gray-400 leading-relaxed font-light">Nada de templates prontos. Desenhamos cada pixel do zero para refletir a autoridade da sua marca.</p>
+            </div>
+            <div class="bg-card p-8 rounded-[32px]">
+                <div class="w-12 h-12 bg-[#FF6B00]/20 rounded-2xl flex items-center justify-center text-2xl mb-6">🔍</div>
+                <h3 class="text-xl font-bold mb-3 text-white">Foco Total em SEO</h3>
+                <p class="text-gray-400 leading-relaxed font-light">Apareça no Google. Estrutura técnica otimizada desde o primeiro dia para atrair clientes organicamente.</p>
+            </div>
+            <div class="bg-card p-8 rounded-[32px]">
+                <div class="w-12 h-12 bg-[#FF6B00]/20 rounded-2xl flex items-center justify-center text-2xl mb-6">🛠️</div>
+                <h3 class="text-xl font-bold mb-3 text-white">Suporte & Manutenção</h3>
+                <p class="text-gray-400 leading-relaxed font-light">Precisa mudar um texto? Um banner? Nossa equipe cuida de tudo para você focar apenas no seu negócio.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="planos" class="py-24 px-6 bg-[#0E0E0E] relative overflow-hidden">
+        <div class="max-w-7xl mx-auto relative z-10 text-center mb-16">
+            <h2 class="text-4xl md:text-6xl font-extrabold tracking-tight text-white mb-6">Escolha o plano ideal</h2>
+            <p class="text-gray-400 max-w-xl mx-auto">Sem taxas ocultas, sem fidelidade. Cancele quando quiser.</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            <div class="bg-black/50 border border-white/5 p-10 rounded-[40px] flex flex-col">
+                <span class="text-gray-500 font-bold text-xs uppercase tracking-widest mb-4">Iniciante</span>
+                <div class="text-4xl font-bold text-white mb-6 font-sora">R$ 197<span class="text-sm text-gray-500 font-normal">/mês</span></div>
+                <p class="text-sm text-gray-400 mb-8">Ideal para profissionais liberais e MEIs que precisam de presença rápida.</p>
+                <ul class="space-y-4 text-sm text-gray-300 mb-10 flex-grow">
+                    <li class="flex items-center gap-3 font-medium text-white">✓ Até 3 Páginas</li>
+                    <li class="flex items-center gap-3">✓ Design Responsivo</li>
+                    <li class="flex items-center gap-3">✓ 1 E-mail Profissional</li>
+                    <li class="flex items-center gap-3">✓ WhatsApp Integrado</li>
+                    <li class="flex items-center gap-3 text-gray-600">✗ Blog/Notícias</li>
+                </ul>
+                <a href="https://viskoo.com.br/whatsapp/" class="w-full py-4 rounded-full border border-white/10 hover:bg-white/5 text-center font-bold transition">Começar Agora</a>
+            </div>
+
+            <div class="bg-black border-2 border-[#FF6B00] p-10 rounded-[40px] flex flex-col relative scale-105 shadow-2xl shadow-[#FF6B00]/10">
+                <div class="absolute -top-5 left-1/2 -translate-x-1/2 bg-[#FF6B00] text-white text-[10px] font-black px-6 py-2 rounded-full uppercase tracking-widest">O Mais Escolhido</div>
+                <span class="text-[#FF6B00] font-bold text-xs uppercase tracking-widest mb-4">Empresas em Crescimento</span>
+                <div class="text-5xl font-bold text-white mb-6 font-sora">R$ 347<span class="text-sm text-gray-500 font-normal">/mês</span></div>
+                <p class="text-sm text-gray-400 mb-8">O equilíbrio perfeito entre design, performance e visibilidade no Google.</p>
+                <ul class="space-y-4 text-sm text-gray-300 mb-10 flex-grow">
+                    <li class="flex items-center gap-3 font-medium text-white">✓ Até 6 Páginas Premium</li>
+                    <li class="flex items-center gap-3 font-medium text-white">✓ SEO Técnico Completo</li>
+                    <li class="flex items-center gap-3">✓ 3 E-mails Profissionais</li>
+                    <li class="flex items-center gap-3">✓ Feed Instagram Automático</li>
+                    <li class="flex items-center gap-3 font-medium text-white">✓ Blog para Autoridade</li>
+                    <li class="flex items-center gap-3">✓ Suporte Prioritário</li>
+                </ul>
+                <a href="https://viskoo.com.br/whatsapp/" class="w-full py-4 rounded-full orange-gradient text-white text-center font-bold btn-animate">Falar com Consultor</a>
+            </div>
+
+            <div class="bg-black/50 border border-white/5 p-10 rounded-[40px] flex flex-col">
+                <span class="text-gray-500 font-bold text-xs uppercase tracking-widest mb-4">Robustez Total</span>
+                <div class="text-4xl font-bold text-white mb-6 font-sora">R$ 597<span class="text-sm text-gray-500 font-normal">/mês</span></div>
+                <p class="text-sm text-gray-400 mb-8">Para empresas que dominam o mercado e precisam de atualizações constantes.</p>
+                <ul class="space-y-4 text-sm text-gray-300 mb-10 flex-grow">
+                    <li class="flex items-center gap-3 font-medium text-white">✓ Páginas Ilimitadas</li>
+                    <li class="flex items-center gap-3">✓ E-mails Ilimitados</li>
+                    <li class="flex items-center gap-3">✓ Atualizações Semanais</li>
+                    <li class="flex items-center gap-3">✓ Reunião Estratégica Mensal</li>
+                    <li class="flex items-center gap-3">✓ Criação de Logo Incluso</li>
+                </ul>
+                <a href="https://viskoo.com.br/whatsapp/" class="w-full py-4 rounded-full border border-white/10 hover:bg-white/5 text-center font-bold transition">Assinar VIP</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="depoimentos" class="py-24 px-6 max-w-7xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-16 items-center">
+            <div>
+                <span class="text-[#FF6B00] text-sm font-bold tracking-[0.3em] uppercase">Depoimentos</span>
+                <h2 class="text-4xl md:text-5xl font-bold mt-4 tracking-tight leading-tight">Empresas que confiam na <span class="text-[#FF6B00]">Viskoo</span></h2>
+                <p class="text-gray-400 mt-6 font-light text-lg">Não somos apenas uma agência de sites, somos seu braço direito tecnológico.</p>
+            </div>
+            <div class="space-y-6">
+                <div class="bg-card p-8 rounded-3xl italic text-gray-300 font-light border-l-4 border-[#FF6B00]">
+                    "Antes eu não existia no Google. Hoje apareço na primeira página. O investimento se pagou em menos de 30 dias."
+                    <div class="mt-4 not-italic font-bold text-white text-sm">— Amanda Ferreira, CEO da Glow Estética</div>
+                </div>
+                <div class="bg-card p-8 rounded-3xl italic text-gray-300 font-light border-l-4 border-[#FF6B00]">
+                    "O suporte é impecável. Mudamos nossa promoção mensal e o site é atualizado no mesmo dia. Recomendo demais!"
+                    <div class="mt-4 not-italic font-bold text-white text-sm">— Ricardo Santos, Santos Advocacia</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 px-6 max-w-3xl mx-auto">
+        <h2 class="text-3xl font-bold text-center mb-12">Dúvidas Frequentes</h2>
+        <div class="space-y-4">
+            <details class="bg-card rounded-2xl p-6 group cursor-pointer">
+                <summary class="list-none flex justify-between items-center font-bold text-white uppercase text-xs tracking-widest">
+                    Posso cancelar quando quiser?
+                    <span class="text-[#FF6B00] group-open:rotate-45 transition">+</span>
+                </summary>
+                <p class="text-gray-400 mt-4 text-sm font-light">Sim! Não temos contrato de fidelidade. Você paga mês a mês e pode cancelar a qualquer momento sem qualquer multa.</p>
+            </details>
+            <details class="bg-card rounded-2xl p-6 group cursor-pointer">
+                <summary class="list-none flex justify-between items-center font-bold text-white uppercase text-xs tracking-widest">
+                    O domínio está incluso?
+                    <span class="text-[#FF6B00] group-open:rotate-45 transition">+</span>
+                </summary>
+                <p class="text-gray-400 mt-4 text-sm font-light">A hospedagem está inclusa. O domínio (.com.br) tem o custo de R$ 40/ano direto com o Registro.br, mas nós cuidamos de toda a configuração para você.</p>
+            </details>
+        </div>
+    </section>
+
+    <section class="py-32 px-6 text-center bg-gradient-to-t from-[#FF6B00]/20 to-transparent">
+        <h2 class="text-4xl md:text-7xl font-extrabold tracking-tighter mb-8 italic">Seu próximo cliente está no Google.<br><span class="text-[#FF6B00]">Ele vai te encontrar?</span></h2>
+        <a href="https://viskoo.com.br/whatsapp/" class="inline-flex orange-gradient text-white px-12 py-6 rounded-full font-black text-xl btn-animate">
+            QUERO MEU SITE AGORA
         </a>
-      </div>
-    </div>
-  </nav>
-
-  <main class="min-h-screen">
-
-    <!-- ═══════════ HERO ═══════════ -->
-    <section class="relative flex min-h-screen items-center justify-center overflow-hidden px-6 pt-20">
-      <div class="pointer-events-none absolute inset-0">
-        <div class="absolute left-1/2 top-0 h-[600px] w-[600px] -translate-x-1/2 rounded-full bg-primary/5 blur-[120px]"></div>
-      </div>
-
-      <div class="relative z-10 mx-auto max-w-4xl text-center">
-        <div class="sr-hidden mb-6 inline-flex items-center gap-2 rounded-full border border-border bg-secondary px-4 py-1.5">
-          <span class="h-2 w-2 rounded-full bg-primary"></span>
-          <span class="text-xs font-medium text-muted-foreground">Site como Servico</span>
-        </div>
-
-        <h1 class="sr-hidden text-balance text-4xl font-bold leading-tight tracking-tight text-foreground md:text-6xl lg:text-7xl" style="transition-delay:0.1s">
-          O Site do seu Negocio,
-          <span class="text-primary">Sem Taxa de Configuracao e Sem Dor de Cabeca.</span>
-        </h1>
-
-        <p class="sr-hidden mx-auto mt-6 max-w-2xl text-pretty text-lg leading-relaxed text-muted-foreground md:text-xl" style="transition-delay:0.2s">
-          Design Premium, Hospedagem Inclusa e Suporte Ilimitado por uma mensalidade que cabe no seu bolso.
-        </p>
-
-        <div class="sr-hidden mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center" style="transition-delay:0.3s">
-          <a href="#planos" class="group inline-flex items-center gap-2 rounded-lg bg-primary px-8 py-4 text-base font-semibold text-primary-foreground transition-all hover:brightness-110 animate-glow-pulse">
-            Escolher meu Plano
-            <i data-lucide="arrow-right" class="w-4 h-4 transition-transform group-hover:translate-x-1"></i>
-          </a>
-          <a href="#beneficios" class="inline-flex items-center gap-2 rounded-lg border border-border px-8 py-4 text-base font-medium text-foreground transition-colors hover:bg-secondary">
-            Ver Beneficios
-          </a>
-        </div>
-      </div>
+        <p class="text-gray-500 mt-8 text-sm uppercase tracking-widest font-bold">Inicie sua transformação digital hoje.</p>
     </section>
 
-    <!-- ═══════════ BENEFICIOS ═══════════ -->
-    <section id="beneficios" class="relative px-6 py-24 lg:py-32">
-      <div class="mx-auto max-w-7xl">
-        <div class="sr-hidden text-center">
-          <span class="text-sm font-semibold uppercase tracking-widest text-primary">Beneficios</span>
-          <h2 class="mt-4 text-balance text-3xl font-bold text-foreground md:text-4xl lg:text-5xl">Tudo o que voce precisa, sem complicacao</h2>
-          <p class="mx-auto mt-4 max-w-2xl text-pretty text-lg text-muted-foreground">Um modelo que simplifica a sua vida e entrega resultado desde o primeiro dia.</p>
+    <footer class="py-12 px-6 border-t border-white/5 text-center text-gray-600 text-xs">
+        <div class="text-xl font-extrabold tracking-tighter text-white mb-4">VISKOO<span class="text-[#FF6B00]">.</span></div>
+        <p>© 2024 Viskoo - Sites que vendem. Assinaturas que entregam.</p>
+        <div class="flex justify-center gap-6 mt-6">
+            <a href="#" class="hover:text-white">Termos de Uso</a>
+            <a href="#" class="hover:text-white">Privacidade</a>
         </div>
+    </footer>
 
-        <div class="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          <!-- Benefit 1 -->
-          <div class="sr-hidden glass-card glass-card-hover group rounded-xl p-8 text-center transition-all">
-            <div class="mx-auto mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-primary/10">
-              <i data-lucide="zap" class="w-7 h-7 text-primary"></i>
-            </div>
-            <h3 class="text-lg font-semibold text-foreground">Setup em 7 dias</h3>
-            <p class="mt-3 text-sm leading-relaxed text-muted-foreground">Seu site profissional no ar em apenas 7 dias uteis. Sem meses de espera, sem enrolacao.</p>
-          </div>
-          <!-- Benefit 2 -->
-          <div class="sr-hidden glass-card glass-card-hover group rounded-xl p-8 text-center transition-all" style="transition-delay:0.1s">
-            <div class="mx-auto mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-primary/10">
-              <i data-lucide="refresh-cw" class="w-7 h-7 text-primary"></i>
-            </div>
-            <h3 class="text-lg font-semibold text-foreground">Alteracoes Ilimitadas</h3>
-            <p class="mt-3 text-sm leading-relaxed text-muted-foreground">Precisa mudar um texto, imagem ou secao? Solicite a qualquer momento, sem custo adicional.</p>
-          </div>
-          <!-- Benefit 3 -->
-          <div class="sr-hidden glass-card glass-card-hover group rounded-xl p-8 text-center transition-all" style="transition-delay:0.2s">
-            <div class="mx-auto mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-primary/10">
-              <i data-lucide="globe" class="w-7 h-7 text-primary"></i>
-            </div>
-            <h3 class="text-lg font-semibold text-foreground">Hospedagem Premium</h3>
-            <p class="mt-3 text-sm leading-relaxed text-muted-foreground">Servidores rapidos e seguros inclusos no plano. Voce nao precisa se preocupar com nada tecnico.</p>
-          </div>
-          <!-- Benefit 4 -->
-          <div class="sr-hidden glass-card glass-card-hover group rounded-xl p-8 text-center transition-all" style="transition-delay:0.3s">
-            <div class="mx-auto mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-primary/10">
-              <i data-lucide="search" class="w-7 h-7 text-primary"></i>
-            </div>
-            <h3 class="text-lg font-semibold text-foreground">SEO Otimizado</h3>
-            <p class="mt-3 text-sm leading-relaxed text-muted-foreground">Seu site ja nasce preparado para o Google. Estrutura tecnica, velocidade e boas praticas de SEO.</p>
-          </div>
-        </div>
-      </div>
-    </section>
+    <a href="https://viskoo.com.br/whatsapp/" target="_blank" class="fixed bottom-8 right-8 z-50 bg-[#25D366] p-4 rounded-full shadow-2xl hover:scale-110 transition btn-animate">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    </a>
 
-    <!-- ═══════════ PLANOS ═══════════ -->
-    <section id="planos" class="relative px-6 py-24 lg:py-32">
-      <div class="mx-auto max-w-7xl">
-        <div class="sr-hidden text-center">
-          <span class="text-sm font-semibold uppercase tracking-widest text-primary">Planos</span>
-          <h2 class="mt-4 text-balance text-3xl font-bold text-foreground md:text-4xl lg:text-5xl">Escolha o plano ideal para o seu negocio</h2>
-          <p class="mx-auto mt-4 max-w-2xl text-pretty text-lg text-muted-foreground">Sem taxa de configuracao. Sem surpresas. Cancele quando quiser.</p>
-        </div>
-
-        <div class="mt-16 grid gap-6 lg:grid-cols-3">
-
-          <!-- Plan: Start -->
-          <div class="sr-hidden group relative flex h-full flex-col rounded-2xl p-8 transition-all duration-300 glass-card hover:border-primary/20">
-            <div class="mb-6">
-              <h3 class="text-xl font-bold text-foreground">Start</h3>
-              <p class="mt-1 text-sm text-muted-foreground">Ideal para Landing Pages e sites simples.</p>
-            </div>
-            <div class="mb-8 flex items-baseline gap-1">
-              <span class="text-sm text-muted-foreground">R$</span>
-              <span class="text-5xl font-bold tracking-tight text-foreground">397</span>
-              <span class="text-sm text-muted-foreground">/mes</span>
-            </div>
-            <ul class="mb-8 flex flex-1 flex-col gap-3">
-              <li class="flex items-start gap-3 text-sm text-muted-foreground"><i data-lucide="check" class="mt-0.5 w-4 h-4 shrink-0 text-primary"></i><span>Landing Page ou Site de 1 pagina</span></li>
-              <li class="flex items-start gap-3 text-sm text-muted-foreground"><i data-lucide="check" class="mt-0.5 w-4 h-4 shrink-0 text-primary"></i><span>Design Responsivo</span></li>
-              <li class="flex items-start gap-3 text-sm text-muted-foreground"><i data-lucide="check" class="mt-0.5 w-4 h-4 shrink-0 text-primary"></i><span>Hospedagem Premium Inclusa</span></li>
-              <li class="flex items-start gap-3 text-sm text-muted-foreground"><i data-lucide="check" class="mt-0.5 w-4 h-4 shrink-0 text-primary"></i><span>SSL Gratis</span></li>
-              <li class="flex items-start gap-3 text-sm text-muted-foreground"><i data-lucide="check" class="mt-0.5 w-4 h-4 shrink-0 text-primary"></i><span>1 E-mail Profissional</span></li>
-              <li class="flex items-start gap-3 text-sm text-muted-foreground"><i data-lucide="check" class="mt-0.5 w-4 h-4 shrink-0 text-primary"></i><span>Suporte por e-mail</span></li>
-              <li class="flex items-start gap-3 text-sm text-muted-foreground"><i data-lucide="check" class="mt-0.5 w-4 h-4 shrink-0 text-primary"></i><span>Alteracoes ilimitadas de texto</span></li>
-            </ul>
-            <a href="#cta" class="group/btn mt-auto inline-flex items-center justify-center gap-2 rounded-lg px-6 py-3.5 text-sm font-semibold transition-all border border-border bg-secondary text-foreground hover:border-primary/30 hover:bg-primary/5">
-              Comecar Agora
-              <i data-lucide="arrow-right" class="w-4 h-4 transition-transform group-hover/btn:translate-x-1"></i>
-            </a>
-          </div>
-
-          <!-- Plan: Business (Highlighted) -->
-          <div class="sr-hidden group relative flex h-full flex-col rounded-2xl p-8 transition-all duration-300 border-2 border-primary bg-card shadow-[0_0_40px_rgba(255,107,0,0.1)] hover:shadow-[0_0_60px_rgba(255,107,0,0.15)]" style="transition-delay:0.1s">
-            <div class="absolute -top-3.5 left-1/2 -translate-x-1/2">
-              <span class="rounded-full bg-primary px-4 py-1 text-xs font-bold uppercase tracking-wider text-primary-foreground">Mais Popular</span>
-            </div>
-            <div class="mb-6">
-              <h3 class="text-xl font-bold text-foreground">Business</h3>
-              <p class="mt-1 text-sm text-muted-foreground">Sites institucionais completos com Blog integrado.</p>
-            </div>
-            <div class="mb-8 flex items-baseline gap-1">
-              <span class="text-sm text-muted-foreground">R$</span>
-              <span class="text-5xl font-bold tracking-tight text-foreground">597</span>
-              <span class="text-sm text-muted-foreground">/mes</span>
-            </div>
-            <ul class="mb-8 flex flex-1 flex-col gap-3">
-              <li class="flex items-start gap-3 text-sm text-muted-foreground"><i data-lucide="check" class="mt-0.5 w-4 h-4 shrink-0 text-primary"></i><span>Site Institucional ate 10 paginas</span></li>
-              <li class="flex items-start gap-3 text-sm text-muted-foreground"><i data-lucide="check" class="mt-0.5 w-4 h-4 shrink-0 text-primary"></i><span>Blog Integrado</span></li>
-              <li class="flex items-start gap-3 text-sm text-muted-foreground"><i data-lucide="check" class="mt-0.5 w-4 h-4 shrink-0 text-primary"></i><span>Design Responsivo Premium</span></li>
-              <li class="flex items-start gap-3 text-sm text-muted-foreground"><i data-lucide="check" class="mt-0.5 w-4 h-4 shrink-0 text-primary"></i><span>Hospedagem Premium Inclusa</span></li>
-              <li class="flex items-start gap-3 text-sm text-muted-foreground"><i data-lucide="check" class="mt-0.5 w-4 h-4 shrink-0 text-primary"></i><span>SSL Gratis</span></li>
-              <li class="flex items-start gap-3 text-sm text-muted-foreground"><i data-lucide="check" class="mt-0.5 w-4 h-4 shrink-0 text-primary"></i><span>5 E-mails Profissionais</span></li>
-              <li class="flex items-start gap-3 text-sm text-muted-foreground"><i data-lucide="check" class="mt-0.5 w-4 h-4 shrink-0 text-primary"></i><span>SEO Otimizado</span></li>
-              <li class="flex items-start gap-3 text-sm text-muted-foreground"><i data-lucide="check" class="mt-0.5 w-4 h-4 shrink-0 text-primary"></i><span>Suporte prioritario</span></li>
-              <li class="flex items-start gap-3 text-sm text-muted-foreground"><i data-lucide="check" class="mt-0.5 w-4 h-4 shrink-0 text-primary"></i><span>Alteracoes ilimitadas</span></li>
-              <li class="flex items-start gap-3 text-sm text-muted-foreground"><i data-lucide="check" class="mt-0.5 w-4 h-4 shrink-0 text-primary"></i><span>Integracao com Google Analytics</span></li>
-            </ul>
-            <a href="#cta" class="group/btn mt-auto inline-flex items-center justify-center gap-2 rounded-lg px-6 py-3.5 text-sm font-semibold transition-all bg-primary text-primary-foreground hover:brightness-110 animate-glow-pulse">
-              Comecar Agora
-              <i data-lucide="arrow-right" class="w-4 h-4 transition-transform group-hover/btn:translate-x-1"></i>
-            </a>
-          </div>
-
-          <!-- Plan: Performance -->
-          <div class="sr-hidden group relative flex h-full flex-col rounded-2xl p-8 transition-all duration-300 glass-card hover:border-primary/20" style="transition-delay:0.2s">
-            <div class="mb-6">
-              <h3 class="text-xl font-bold text-foreground">Performance</h3>
-              <p class="mt-1 text-sm text-muted-foreground">E-commerce e projetos de alta escala.</p>
-            </div>
-            <div class="mb-8 flex items-baseline gap-1">
-              <span class="text-sm text-muted-foreground">R$</span>
-              <span class="text-5xl font-bold tracking-tight text-foreground">997</span>
-              <span class="text-sm text-muted-foreground">/mes</span>
-            </div>
-            <ul class="mb-8 flex flex-1 flex-col gap-3">
-              <li class="flex items-start gap-3 text-sm text-muted-foreground"><i data-lucide="check" class="mt-0.5 w-4 h-4 shrink-0 text-primary"></i><span>E-commerce Completo</span></li>
-              <li class="flex items-start gap-3 text-sm text-muted-foreground"><i data-lucide="check" class="mt-0.5 w-4 h-4 shrink-0 text-primary"></i><span>Paginas Ilimitadas</span></li>
-              <li class="flex items-start gap-3 text-sm text-muted-foreground"><i data-lucide="check" class="mt-0.5 w-4 h-4 shrink-0 text-primary"></i><span>Blog + Loja integrados</span></li>
-              <li class="flex items-start gap-3 text-sm text-muted-foreground"><i data-lucide="check" class="mt-0.5 w-4 h-4 shrink-0 text-primary"></i><span>Design Responsivo Premium</span></li>
-              <li class="flex items-start gap-3 text-sm text-muted-foreground"><i data-lucide="check" class="mt-0.5 w-4 h-4 shrink-0 text-primary"></i><span>Hospedagem de Alta Performance</span></li>
-              <li class="flex items-start gap-3 text-sm text-muted-foreground"><i data-lucide="check" class="mt-0.5 w-4 h-4 shrink-0 text-primary"></i><span>SSL Gratis</span></li>
-              <li class="flex items-start gap-3 text-sm text-muted-foreground"><i data-lucide="check" class="mt-0.5 w-4 h-4 shrink-0 text-primary"></i><span>10 E-mails Profissionais</span></li>
-              <li class="flex items-start gap-3 text-sm text-muted-foreground"><i data-lucide="check" class="mt-0.5 w-4 h-4 shrink-0 text-primary"></i><span>SEO Avancado</span></li>
-              <li class="flex items-start gap-3 text-sm text-muted-foreground"><i data-lucide="check" class="mt-0.5 w-4 h-4 shrink-0 text-primary"></i><span>Suporte dedicado</span></li>
-              <li class="flex items-start gap-3 text-sm text-muted-foreground"><i data-lucide="check" class="mt-0.5 w-4 h-4 shrink-0 text-primary"></i><span>Alteracoes ilimitadas</span></li>
-              <li class="flex items-start gap-3 text-sm text-muted-foreground"><i data-lucide="check" class="mt-0.5 w-4 h-4 shrink-0 text-primary"></i><span>Integracao com gateways de pagamento</span></li>
-              <li class="flex items-start gap-3 text-sm text-muted-foreground"><i data-lucide="check" class="mt-0.5 w-4 h-4 shrink-0 text-primary"></i><span>Relatorios de performance</span></li>
-            </ul>
-            <a href="#cta" class="group/btn mt-auto inline-flex items-center justify-center gap-2 rounded-lg px-6 py-3.5 text-sm font-semibold transition-all border border-border bg-secondary text-foreground hover:border-primary/30 hover:bg-primary/5">
-              Comecar Agora
-              <i data-lucide="arrow-right" class="w-4 h-4 transition-transform group-hover/btn:translate-x-1"></i>
-            </a>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- ═══════════ COMPARATIVO ═══════════ -->
-    <section class="relative px-6 py-24 lg:py-32">
-      <div class="mx-auto max-w-4xl">
-        <div class="sr-hidden text-center">
-          <span class="text-sm font-semibold uppercase tracking-widest text-primary">Diferencial</span>
-          <h2 class="mt-4 text-balance text-3xl font-bold text-foreground md:text-4xl lg:text-5xl">Agencia Tradicional vs Assinatura Viskoo</h2>
-          <p class="mx-auto mt-4 max-w-2xl text-pretty text-lg text-muted-foreground">Pare de gastar fortunas com processos lentos. Adote um modelo moderno e previsivel.</p>
-        </div>
-
-        <div class="sr-hidden mt-16 overflow-hidden rounded-2xl border border-border" style="transition-delay:0.2s">
-          <!-- Header -->
-          <div class="grid grid-cols-3 border-b border-border bg-secondary/50">
-            <div class="p-4 md:p-6">
-              <span class="text-xs font-semibold uppercase tracking-widest text-muted-foreground">Comparativo</span>
-            </div>
-            <div class="border-l border-border p-4 text-center md:p-6">
-              <span class="text-sm font-semibold text-muted-foreground">Agencia Tradicional</span>
-            </div>
-            <div class="border-l border-primary/30 bg-primary/5 p-4 text-center md:p-6">
-              <span class="text-sm font-bold text-primary">Viskoo</span>
-            </div>
-          </div>
-          <!-- Rows -->
-          <div class="grid grid-cols-3 border-b border-border">
-            <div class="flex items-center p-4 md:p-6"><span class="text-sm font-medium text-foreground">Prazo de entrega</span></div>
-            <div class="flex items-center justify-center border-l border-border p-4 text-center md:p-6"><div class="flex items-center gap-2"><i data-lucide="x" class="hidden sm:block w-4 h-4 shrink-0 text-red-400"></i><span class="text-xs sm:text-sm text-muted-foreground">2 a 6 meses</span></div></div>
-            <div class="flex items-center justify-center border-l border-primary/30 bg-primary/5 p-4 text-center md:p-6"><div class="flex items-center gap-2"><i data-lucide="check" class="hidden sm:block w-4 h-4 shrink-0 text-primary"></i><span class="text-xs sm:text-sm font-medium text-foreground">7 dias uteis</span></div></div>
-          </div>
-          <div class="grid grid-cols-3 border-b border-border">
-            <div class="flex items-center p-4 md:p-6"><span class="text-sm font-medium text-foreground">Taxa de setup</span></div>
-            <div class="flex items-center justify-center border-l border-border p-4 text-center md:p-6"><div class="flex items-center gap-2"><i data-lucide="x" class="hidden sm:block w-4 h-4 shrink-0 text-red-400"></i><span class="text-xs sm:text-sm text-muted-foreground">R$ 3.000 a R$ 15.000+</span></div></div>
-            <div class="flex items-center justify-center border-l border-primary/30 bg-primary/5 p-4 text-center md:p-6"><div class="flex items-center gap-2"><i data-lucide="check" class="hidden sm:block w-4 h-4 shrink-0 text-primary"></i><span class="text-xs sm:text-sm font-medium text-foreground">R$ 0</span></div></div>
-          </div>
-          <div class="grid grid-cols-3 border-b border-border">
-            <div class="flex items-center p-4 md:p-6"><span class="text-sm font-medium text-foreground">Alteracoes</span></div>
-            <div class="flex items-center justify-center border-l border-border p-4 text-center md:p-6"><div class="flex items-center gap-2"><i data-lucide="x" class="hidden sm:block w-4 h-4 shrink-0 text-red-400"></i><span class="text-xs sm:text-sm text-muted-foreground">Cobradas a parte</span></div></div>
-            <div class="flex items-center justify-center border-l border-primary/30 bg-primary/5 p-4 text-center md:p-6"><div class="flex items-center gap-2"><i data-lucide="check" class="hidden sm:block w-4 h-4 shrink-0 text-primary"></i><span class="text-xs sm:text-sm font-medium text-foreground">Ilimitadas e inclusas</span></div></div>
-          </div>
-          <div class="grid grid-cols-3 border-b border-border">
-            <div class="flex items-center p-4 md:p-6"><span class="text-sm font-medium text-foreground">Hospedagem</span></div>
-            <div class="flex items-center justify-center border-l border-border p-4 text-center md:p-6"><div class="flex items-center gap-2"><i data-lucide="x" class="hidden sm:block w-4 h-4 shrink-0 text-red-400"></i><span class="text-xs sm:text-sm text-muted-foreground">Voce resolve</span></div></div>
-            <div class="flex items-center justify-center border-l border-primary/30 bg-primary/5 p-4 text-center md:p-6"><div class="flex items-center gap-2"><i data-lucide="check" class="hidden sm:block w-4 h-4 shrink-0 text-primary"></i><span class="text-xs sm:text-sm font-medium text-foreground">Premium inclusa</span></div></div>
-          </div>
-          <div class="grid grid-cols-3 border-b border-border">
-            <div class="flex items-center p-4 md:p-6"><span class="text-sm font-medium text-foreground">Manutencao tecnica</span></div>
-            <div class="flex items-center justify-center border-l border-border p-4 text-center md:p-6"><div class="flex items-center gap-2"><i data-lucide="x" class="hidden sm:block w-4 h-4 shrink-0 text-red-400"></i><span class="text-xs sm:text-sm text-muted-foreground">Cobrada por hora</span></div></div>
-            <div class="flex items-center justify-center border-l border-primary/30 bg-primary/5 p-4 text-center md:p-6"><div class="flex items-center gap-2"><i data-lucide="check" class="hidden sm:block w-4 h-4 shrink-0 text-primary"></i><span class="text-xs sm:text-sm font-medium text-foreground">Inclusa no plano</span></div></div>
-          </div>
-          <div class="grid grid-cols-3 border-b border-border">
-            <div class="flex items-center p-4 md:p-6"><span class="text-sm font-medium text-foreground">Suporte</span></div>
-            <div class="flex items-center justify-center border-l border-border p-4 text-center md:p-6"><div class="flex items-center gap-2"><i data-lucide="x" class="hidden sm:block w-4 h-4 shrink-0 text-red-400"></i><span class="text-xs sm:text-sm text-muted-foreground">Lento e burocratico</span></div></div>
-            <div class="flex items-center justify-center border-l border-primary/30 bg-primary/5 p-4 text-center md:p-6"><div class="flex items-center gap-2"><i data-lucide="check" class="hidden sm:block w-4 h-4 shrink-0 text-primary"></i><span class="text-xs sm:text-sm font-medium text-foreground">Rapido e ilimitado</span></div></div>
-          </div>
-          <div class="grid grid-cols-3">
-            <div class="flex items-center p-4 md:p-6"><span class="text-sm font-medium text-foreground">Custo mensal previsivel</span></div>
-            <div class="flex items-center justify-center border-l border-border p-4 text-center md:p-6"><div class="flex items-center gap-2"><i data-lucide="x" class="hidden sm:block w-4 h-4 shrink-0 text-red-400"></i><span class="text-xs sm:text-sm text-muted-foreground">Imprevisivel</span></div></div>
-            <div class="flex items-center justify-center border-l border-primary/30 bg-primary/5 p-4 text-center md:p-6"><div class="flex items-center gap-2"><i data-lucide="check" class="hidden sm:block w-4 h-4 shrink-0 text-primary"></i><span class="text-xs sm:text-sm font-medium text-foreground">A partir de R$ 397/mes</span></div></div>
-          </div>
-        </div>
-
-        <div class="sr-hidden mt-10 text-center" style="transition-delay:0.3s">
-          <a href="#planos" class="group inline-flex items-center gap-2 rounded-lg bg-primary px-8 py-4 text-base font-semibold text-primary-foreground transition-all hover:brightness-110">
-            Escolher meu Plano
-            <i data-lucide="arrow-right" class="w-4 h-4 transition-transform group-hover:translate-x-1"></i>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- ═══════════ TUDO INCLUSO ═══════════ -->
-    <section id="incluso" class="relative px-6 py-24 lg:py-32">
-      <div class="mx-auto max-w-7xl">
-        <div class="sr-hidden text-center">
-          <span class="text-sm font-semibold uppercase tracking-widest text-primary">Tudo Incluso</span>
-          <h2 class="mt-4 text-balance text-3xl font-bold text-foreground md:text-4xl lg:text-5xl">O que voce recebe em todos os planos</h2>
-          <p class="mx-auto mt-4 max-w-2xl text-pretty text-lg text-muted-foreground">Cada detalhe pensado para voce focar no que importa: o seu negocio.</p>
-        </div>
-
-        <div class="mt-16 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          <div class="sr-hidden glass-card glass-card-hover flex items-start gap-4 rounded-xl p-6 transition-all">
-            <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary/10"><i data-lucide="lock" class="w-5 h-5 text-primary"></i></div>
-            <div><h3 class="text-sm font-semibold text-foreground">SSL Gratis</h3><p class="mt-1 text-xs leading-relaxed text-muted-foreground">Certificado de seguranca para seu site transmitir confianca.</p></div>
-          </div>
-          <div class="sr-hidden glass-card glass-card-hover flex items-start gap-4 rounded-xl p-6 transition-all" style="transition-delay:75ms">
-            <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary/10"><i data-lucide="mail" class="w-5 h-5 text-primary"></i></div>
-            <div><h3 class="text-sm font-semibold text-foreground">E-mails Profissionais</h3><p class="mt-1 text-xs leading-relaxed text-muted-foreground">Enderecos @suaempresa.com.br inclusos no plano.</p></div>
-          </div>
-          <div class="sr-hidden glass-card glass-card-hover flex items-start gap-4 rounded-xl p-6 transition-all" style="transition-delay:150ms">
-            <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary/10"><i data-lucide="wrench" class="w-5 h-5 text-primary"></i></div>
-            <div><h3 class="text-sm font-semibold text-foreground">Manutencao Tecnica</h3><p class="mt-1 text-xs leading-relaxed text-muted-foreground">Atualizacoes, backups e monitoramento sem custo extra.</p></div>
-          </div>
-          <div class="sr-hidden glass-card glass-card-hover flex items-start gap-4 rounded-xl p-6 transition-all" style="transition-delay:225ms">
-            <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary/10"><i data-lucide="smartphone" class="w-5 h-5 text-primary"></i></div>
-            <div><h3 class="text-sm font-semibold text-foreground">Design Responsivo</h3><p class="mt-1 text-xs leading-relaxed text-muted-foreground">Perfeito em celulares, tablets e desktops.</p></div>
-          </div>
-          <div class="sr-hidden glass-card glass-card-hover flex items-start gap-4 rounded-xl p-6 transition-all" style="transition-delay:300ms">
-            <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary/10"><i data-lucide="headphones" class="w-5 h-5 text-primary"></i></div>
-            <div><h3 class="text-sm font-semibold text-foreground">Suporte Ilimitado</h3><p class="mt-1 text-xs leading-relaxed text-muted-foreground">Solicite alteracoes e tire duvidas quando precisar.</p></div>
-          </div>
-          <div class="sr-hidden glass-card glass-card-hover flex items-start gap-4 rounded-xl p-6 transition-all" style="transition-delay:375ms">
-            <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary/10"><i data-lucide="bar-chart-3" class="w-5 h-5 text-primary"></i></div>
-            <div><h3 class="text-sm font-semibold text-foreground">Google Analytics</h3><p class="mt-1 text-xs leading-relaxed text-muted-foreground">Acompanhe as metricas e o desempenho do seu site.</p></div>
-          </div>
-          <div class="sr-hidden glass-card glass-card-hover flex items-start gap-4 rounded-xl p-6 transition-all" style="transition-delay:450ms">
-            <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary/10"><i data-lucide="server" class="w-5 h-5 text-primary"></i></div>
-            <div><h3 class="text-sm font-semibold text-foreground">Hospedagem Premium</h3><p class="mt-1 text-xs leading-relaxed text-muted-foreground">Servidores rapidos e confiaveis, sem voce pagar nada a mais.</p></div>
-          </div>
-          <div class="sr-hidden glass-card glass-card-hover flex items-start gap-4 rounded-xl p-6 transition-all" style="transition-delay:525ms">
-            <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary/10"><i data-lucide="palette" class="w-5 h-5 text-primary"></i></div>
-            <div><h3 class="text-sm font-semibold text-foreground">Design Exclusivo</h3><p class="mt-1 text-xs leading-relaxed text-muted-foreground">Layout personalizado para a identidade da sua marca.</p></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ═══════════ FAQ ═══════════ -->
-    <section id="faq" class="relative px-6 py-24 lg:py-32">
-      <div class="mx-auto max-w-3xl">
-        <div class="sr-hidden text-center">
-          <span class="text-sm font-semibold uppercase tracking-widest text-primary">FAQ</span>
-          <h2 class="mt-4 text-balance text-3xl font-bold text-foreground md:text-4xl">Perguntas frequentes</h2>
-        </div>
-
-        <div class="mt-12 flex flex-col gap-3" id="faq-container">
-          <!-- FAQ items rendered by JS -->
-        </div>
-      </div>
-    </section>
-
-    <!-- ═══════════ CTA FINAL ═══════════ -->
-    <section id="cta" class="relative px-6 py-24 lg:py-32">
-      <div class="mx-auto max-w-4xl">
-        <div class="sr-hidden glass-card relative overflow-hidden rounded-2xl p-10 md:p-16">
-          <div class="pointer-events-none absolute -right-20 -top-20 h-60 w-60 rounded-full bg-primary/10 blur-[80px]"></div>
-          <div class="pointer-events-none absolute -bottom-20 -left-20 h-60 w-60 rounded-full bg-primary/5 blur-[80px]"></div>
-
-          <div class="relative z-10 text-center">
-            <div class="mb-6 inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-4 py-1.5">
-              <i data-lucide="message-circle" class="w-3.5 h-3.5 text-primary"></i>
-              <span class="text-xs font-medium text-primary">Fale com um consultor</span>
-            </div>
-
-            <h2 class="text-balance text-3xl font-bold text-foreground md:text-4xl lg:text-5xl">Pronto para ter o site que seu negocio merece?</h2>
-            <p class="mx-auto mt-4 max-w-xl text-pretty text-lg text-muted-foreground">Pare de perder clientes com um site amador ou sem presenca online. Comece hoje com a Viskoo.</p>
-
-            <div class="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-              <a href="#planos" class="group inline-flex items-center gap-2 rounded-lg bg-primary px-10 py-4 text-base font-semibold text-primary-foreground transition-all hover:brightness-110 animate-glow-pulse">
-                Escolher meu Plano
-                <i data-lucide="arrow-right" class="w-4 h-4 transition-transform group-hover:translate-x-1"></i>
-              </a>
-              <a href="#" class="inline-flex items-center gap-2 rounded-lg border border-border px-10 py-4 text-base font-medium text-foreground transition-colors hover:bg-secondary">
-                Falar com Consultor
-              </a>
-            </div>
-
-            <p class="mt-4 text-xs text-muted-foreground">Sem taxa de configuracao. Cancele quando quiser.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-  </main>
-
-  <!-- ═══════════ FOOTER ═══════════ -->
-  <footer class="border-t border-border px-6 py-12">
-    <div class="mx-auto max-w-7xl">
-      <div class="grid gap-8 md:grid-cols-3">
-        <div>
-          <span class="text-lg font-bold text-foreground">Viskoo</span>
-          <p class="mt-3 max-w-xs text-sm leading-relaxed text-muted-foreground">Sites Profissionais por Assinatura. Design Premium, hospedagem inclusa e suporte ilimitado por uma mensalidade previsivel.</p>
-        </div>
-        <div>
-          <h4 class="text-sm font-semibold text-foreground">Links</h4>
-          <ul class="mt-4 flex flex-col gap-3">
-            <li><a href="#beneficios" class="text-sm text-muted-foreground transition-colors hover:text-foreground">Beneficios</a></li>
-            <li><a href="#planos" class="text-sm text-muted-foreground transition-colors hover:text-foreground">Planos</a></li>
-            <li><a href="#incluso" class="text-sm text-muted-foreground transition-colors hover:text-foreground">O que esta incluso</a></li>
-            <li><a href="#faq" class="text-sm text-muted-foreground transition-colors hover:text-foreground">FAQ</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4 class="text-sm font-semibold text-foreground">Contato</h4>
-          <ul class="mt-4 flex flex-col gap-3">
-            <li><a href="#" class="text-sm text-muted-foreground transition-colors hover:text-foreground">Instagram</a></li>
-            <li><a href="#" class="text-sm text-muted-foreground transition-colors hover:text-foreground">LinkedIn</a></li>
-            <li><a href="#" class="text-sm text-muted-foreground transition-colors hover:text-foreground">contato@viskoo.com.br</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="mt-12 flex flex-col items-center gap-4 border-t border-border pt-8 sm:flex-row sm:justify-between">
-        <p class="text-xs text-muted-foreground" id="footer-year"></p>
-        <a href="#" class="text-sm font-medium text-primary transition-colors hover:brightness-110">Falar com Consultor</a>
-      </div>
-    </div>
-  </footer>
-
-  <script>
-    // ── Lucide icons init ──
-    lucide.createIcons();
-
-    // ── Mobile menu toggle ──
-    const mobileToggle = document.getElementById('mobile-toggle');
-    const mobileMenu = document.getElementById('mobile-menu');
-    let menuOpen = false;
-
-    mobileToggle.addEventListener('click', () => {
-      menuOpen = !menuOpen;
-      mobileMenu.classList.toggle('hidden', !menuOpen);
-      mobileToggle.setAttribute('aria-label', menuOpen ? 'Fechar menu' : 'Abrir menu');
-      // Swap icon
-      mobileToggle.innerHTML = menuOpen
-        ? '<i data-lucide="x" class="w-6 h-6"></i>'
-        : '<i data-lucide="menu" class="w-6 h-6"></i>';
-      lucide.createIcons();
-    });
-
-    document.querySelectorAll('.mobile-link').forEach(link => {
-      link.addEventListener('click', () => {
-        menuOpen = false;
-        mobileMenu.classList.add('hidden');
-        mobileToggle.innerHTML = '<i data-lucide="menu" class="w-6 h-6"></i>';
-        lucide.createIcons();
-      });
-    });
-
-    // ── FAQ accordion ──
-    const faqData = [
-      { q: "O site e meu?", a: "Enquanto sua assinatura estiver ativa, o site e totalmente seu: dominio, conteudo e design. Caso voce cancele, podemos migrar tudo para voce ou exportar os arquivos." },
-      { q: "Posso cancelar quando quiser?", a: "Sim! Nao existe fidelidade ou multa. Voce pode cancelar a qualquer momento. Simples assim." },
-      { q: "O que acontece se eu precisar mudar um texto?", a: "Basta nos enviar a solicitacao e nos fazemos a alteracao para voce, sem custo adicional. As alteracoes sao ilimitadas em todos os planos." },
-      { q: "Preciso entender de tecnologia para ter um site?", a: "De jeito nenhum. Nos cuidamos de toda a parte tecnica: hospedagem, dominio, certificado SSL, manutencao e atualizacoes. Voce so precisa focar no seu negocio." },
-      { q: "Quanto tempo leva para o site ficar pronto?", a: "O setup inicial leva em media 7 dias uteis. Apos a aprovacao do layout, o site ja fica no ar." },
-      { q: "A hospedagem esta inclusa mesmo?", a: "Sim, todos os planos incluem hospedagem premium em servidores rapidos e seguros. Voce nao precisa contratar nada separadamente." },
-    ];
-
-    const faqContainer = document.getElementById('faq-container');
-    let openFaq = -1;
-
-    function renderFaq() {
-      faqContainer.innerHTML = faqData.map((item, i) => `
-        <div class="sr-hidden glass-card rounded-xl transition-all${i > 0 ? '" style="transition-delay:' + (i * 50) + 'ms"' : '"'}> 
-          <button class="faq-btn flex w-full items-center justify-between p-6 text-left" data-index="${i}" aria-expanded="${openFaq === i}">
-            <span class="pr-4 text-sm font-medium text-foreground">${item.q}</span>
-            <svg class="w-5 h-5 shrink-0 text-muted-foreground transition-transform ${openFaq === i ? 'rotate-180' : ''}" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m6 9 6 6 6-6" /></svg>
-          </button>
-          ${openFaq === i ? `<div class="px-6 pb-6"><p class="text-sm leading-relaxed text-muted-foreground">${item.a}</p></div>` : ''}
-        </div>
-      `).join('');
-
-      // Bind click
-      faqContainer.querySelectorAll('.faq-btn').forEach(btn => {
-        btn.addEventListener('click', () => {
-          const idx = parseInt(btn.dataset.index);
-          openFaq = openFaq === idx ? -1 : idx;
-          renderFaq();
-          observeAll(); // Re-observe new FAQ elements
-        });
-      });
-    }
-
-    renderFaq();
-
-    // ── Footer year ──
-    document.getElementById('footer-year').textContent = new Date().getFullYear() + ' Viskoo. Todos os direitos reservados.';
-
-    // ── Scroll reveal (IntersectionObserver) ──
-    function observeAll() {
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('sr-visible');
-            entry.target.classList.remove('sr-hidden');
-            observer.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-
-      document.querySelectorAll('.sr-hidden').forEach(el => observer.observe(el));
-    }
-
-    observeAll();
-  </script>
-
+    <style>
+        @keyframes marquee {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+        .animate-marquee {
+            animation: marquee 20s linear infinite;
+        }
+    </style>
 </body>
 </html>
