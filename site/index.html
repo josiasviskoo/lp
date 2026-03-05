@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Viskoo | Sites que Vendem. Assinaturas que Entregam.</title>
+    <title>Viskoo | Domine seu Mercado com um Site de Elite</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
@@ -11,216 +11,158 @@
         h1, h2, h3, .font-sora { font-family: 'Sora', sans-serif; }
         .orange-gradient { background: linear-gradient(135deg, #FF6B00 0%, #FF8C2A 100%); }
         .text-orange-glow { color: #FF6B00; text-shadow: 0 0 15px rgba(255, 107, 0, 0.3); }
-        .border-orange-dim { border-color: rgba(255, 107, 0, 0.2); }
         .bg-card { background-color: #0E0E0E; border: 1px solid rgba(255,255,255,0.07); }
         .bg-card:hover { border-color: rgba(255, 107, 0, 0.4); transform: translateY(-4px); transition: all 0.3s ease; }
         .hero-glow { position: absolute; top: -200px; left: 50%; transform: translateX(-50%); width: 800px; height: 800px; background: radial-gradient(circle, rgba(255,107,0,0.12) 0%, transparent 70%); pointer-events: none; z-index: 0; }
         .btn-animate { transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1); }
         .btn-animate:hover { transform: scale(1.05); box-shadow: 0 10px 40px rgba(255,107,0,0.4); }
+        @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+        .animate-marquee { display: flex; width: 200%; animation: marquee 25s linear infinite; }
     </style>
 </head>
 <body class="overflow-x-hidden">
 
     <nav class="fixed w-full z-50 bg-black/70 backdrop-blur-xl border-b border-white/5 py-4 px-6 md:px-12 flex justify-between items-center">
-        <div class="text-2xl font-extrabold tracking-tighter text-white">VISKOO<span class="text-[#FF6B00]">.</span></div>
+        <a href="#">
+            <img src="../imgs/viskoo-branco.svg" alt="Viskoo Logo" class="h-8 w-auto">
+        </a>
         <div class="hidden md:flex gap-8 text-sm font-medium text-gray-400">
-            <a href="#recursos" class="hover:text-white transition">Recursos</a>
-            <a href="#depoimentos" class="hover:text-white transition">Depoimentos</a>
+            <a href="#recursos" class="hover:text-white transition">Diferenciais</a>
             <a href="#planos" class="hover:text-white transition">Planos</a>
+            <a href="#faq" class="hover:text-white transition">FAQ</a>
         </div>
         <a href="https://viskoo.com.br/whatsapp/" target="_blank" class="bg-[#25D366] hover:bg-[#1ebe5d] text-white px-6 py-2.5 rounded-full text-sm font-bold flex items-center gap-2 transition btn-animate">
-            Falar Agora
+            Falar com Consultor
         </a>
     </nav>
 
-    <section class="relative min-height-[100vh] flex flex-col items-center justify-center text-center px-6 pt-32 pb-20">
+    <section class="relative min-h-screen flex flex-col items-center justify-center text-center px-6 pt-20">
         <div class="hero-glow"></div>
         <div class="relative z-10">
             <div class="inline-flex items-center gap-2 bg-[#FF6B00]/10 border border-[#FF6B00]/30 text-[#FF8C2A] px-4 py-1.5 rounded-full text-xs font-bold mb-8 uppercase tracking-widest animate-pulse">
-                ✦ +500 sites entregues com sucesso
+                ✦ Design de Elite & Performance Real
             </div>
-            <h1 class="text-5xl md:text-7xl lg:text-8xl font-extrabold tracking-tighter leading-none mb-8">
-                Seu site profissional.<br>
-                <span class="orange-gradient bg-clip-text text-transparent italic">Assinado, entregue,</span><br>
-                crescendo.
+            <h1 class="text-5xl md:text-7xl lg:text-8xl font-extrabold tracking-tighter leading-tight mb-8">
+                Pare de ser invisível.<br>
+                <span class="orange-gradient bg-clip-text text-transparent italic">Domine o seu mercado</span><br>
+                agora.
             </h1>
             <p class="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto mb-12 font-light">
-                Pare de perder clientes para concorrentes com sites melhores. Tenha um design exclusivo, performance real e suporte contínuo em um plano de assinatura simples.
+                Tenha um site profissional de alta conversão por uma assinatura que cabe no seu bolso. Sem taxa de setup, sem dor de cabeça e com suporte ilimitado.
             </p>
-            <div class="flex flex-col md:flex-row gap-4 justify-center items-center">
+            <div class="flex flex-col md:flex-row gap-6 justify-center items-center">
                 <a href="#planos" class="orange-gradient text-white px-10 py-5 rounded-full font-bold text-lg flex items-center gap-3 btn-animate">
-                    Ver Planos e Preços
+                    QUERO MEU SITE AGORA
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                 </a>
-                <p class="text-sm text-gray-500 italic">Sem taxa de setup • Cancele quando quiser</p>
             </div>
-        </div>
-
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mt-24 relative z-10 w-full max-w-5xl border-t border-white/5 pt-12">
-            <div><div class="text-4xl font-bold text-white mb-1">500+</div><div class="text-xs text-gray-500 uppercase tracking-widest">Sites Entregues</div></div>
-            <div><div class="text-4xl font-bold text-white mb-1">99%</div><div class="text-xs text-gray-500 uppercase tracking-widest">Aprovação Real</div></div>
-            <div><div class="text-4xl font-bold text-white mb-1">24h</div><div class="text-xs text-gray-500 uppercase tracking-widest">Monitoramento</div></div>
-            <div><div class="text-4xl font-bold text-white mb-1">0%</div><div class="text-xs text-gray-500 uppercase tracking-widest">Taxa de Setup</div></div>
+            <div class="mt-8 flex items-center justify-center gap-4 text-sm text-gray-500">
+                <span class="flex items-center gap-1">✓ Sem Fidelidade</span>
+                <span class="flex items-center gap-1">✓ Setup Grátis</span>
+                <span class="flex items-center gap-1">✓ Suporte Premium</span>
+            </div>
         </div>
     </section>
 
-    <div class="bg-card border-y border-white/5 py-6 overflow-hidden flex whitespace-nowrap">
-        <div class="flex gap-12 animate-marquee items-center text-sm font-bold text-gray-500 uppercase tracking-widest">
-            <span>SEO Otimizado</span> <div class="w-1.5 h-1.5 rounded-full bg-[#FF6B00]"></div>
-            <span>Design Exclusivo</span> <div class="w-1.5 h-1.5 rounded-full bg-[#FF6B00]"></div>
-            <span>Suporte Ilimitado</span> <div class="w-1.5 h-1.5 rounded-full bg-[#FF6B00]"></div>
-            <span>E-mail Profissional</span> <div class="w-1.5 h-1.5 rounded-full bg-[#FF6B00]"></div>
-            <span>Hospedagem Inclusa</span> <div class="w-1.5 h-1.5 rounded-full bg-[#FF6B00]"></div>
-            <span>WhatsApp Integrado</span> <div class="w-1.5 h-1.5 rounded-full bg-[#FF6B00]"></div>
+    <div class="bg-card border-y border-white/5 py-6 overflow-hidden">
+        <div class="animate-marquee items-center text-sm font-bold text-gray-500 uppercase tracking-widest gap-12">
+            <span class="flex items-center gap-4">SEO OTIMIZADO <div class="w-2 h-2 rounded-full bg-[#FF6B00]"></div></span>
+            <span class="flex items-center gap-4">DESIGN EXCLUSIVO <div class="w-2 h-2 rounded-full bg-[#FF6B00]"></div></span>
+            <span class="flex items-center gap-4">HOSPEDAGEM INCLUSA <div class="w-2 h-2 rounded-full bg-[#FF6B00]"></div></span>
+            <span class="flex items-center gap-4">SUPORTE ILIMITADO <div class="w-2 h-2 rounded-full bg-[#FF6B00]"></div></span>
+            <span class="flex items-center gap-4">E-MAIL PROFISSIONAL <div class="w-2 h-2 rounded-full bg-[#FF6B00]"></div></span>
+            <span class="flex items-center gap-4">SEO OTIMIZADO <div class="w-2 h-2 rounded-full bg-[#FF6B00]"></div></span>
+            <span class="flex items-center gap-4">DESIGN EXCLUSIVO <div class="w-2 h-2 rounded-full bg-[#FF6B00]"></div></span>
+            <span class="flex items-center gap-4">HOSPEDAGEM INCLUSA <div class="w-2 h-2 rounded-full bg-[#FF6B00]"></div></span>
+            <span class="flex items-center gap-4">SUPORTE ILIMITADO <div class="w-2 h-2 rounded-full bg-[#FF6B00]"></div></span>
         </div>
     </div>
 
-    <section id="recursos" class="py-24 px-6 md:px-12 max-w-7xl mx-auto">
-        <div class="text-center mb-16">
-            <span class="text-[#FF6B00] text-sm font-bold tracking-[0.3em] uppercase">Por que a Viskoo?</span>
-            <h2 class="text-4xl md:text-5xl font-bold mt-4 tracking-tight">Tudo que seu site precisa<br>para <span class="text-[#FF6B00]">converter</span>.</h2>
-        </div>
-        <div class="grid md:grid-cols-3 gap-6">
-            <div class="bg-card p-8 rounded-[32px]">
-                <div class="w-12 h-12 bg-[#FF6B00]/20 rounded-2xl flex items-center justify-center text-2xl mb-6">🎨</div>
-                <h3 class="text-xl font-bold mb-3 text-white">Layout 100% Exclusivo</h3>
-                <p class="text-gray-400 leading-relaxed font-light">Nada de templates prontos. Desenhamos cada pixel do zero para refletir a autoridade da sua marca.</p>
+    <section id="recursos" class="py-32 px-6 max-w-7xl mx-auto">
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="bg-card p-10 rounded-[32px]">
+                <div class="text-[#FF6B00] mb-6"><svg width="40" height="40" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
+                <h3 class="text-xl font-bold mb-4">Autoridade Instantânea</h3>
+                <p class="text-gray-400 font-light leading-relaxed">Não use templates amadores. Tenha um design que comunica o real valor do seu trabalho logo no primeiro segundo.</p>
             </div>
-            <div class="bg-card p-8 rounded-[32px]">
-                <div class="w-12 h-12 bg-[#FF6B00]/20 rounded-2xl flex items-center justify-center text-2xl mb-6">🔍</div>
-                <h3 class="text-xl font-bold mb-3 text-white">Foco Total em SEO</h3>
-                <p class="text-gray-400 leading-relaxed font-light">Apareça no Google. Estrutura técnica otimizada desde o primeiro dia para atrair clientes organicamente.</p>
+            <div class="bg-card p-10 rounded-[32px]">
+                <div class="text-[#FF6B00] mb-6"><svg width="40" height="40" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
+                <h3 class="text-xl font-bold mb-4">Velocidade que Converte</h3>
+                <p class="text-gray-400 font-light leading-relaxed">Sites lentos perdem vendas. Nossa infraestrutura garante carregamento em menos de 2 segundos.</p>
             </div>
-            <div class="bg-card p-8 rounded-[32px]">
-                <div class="w-12 h-12 bg-[#FF6B00]/20 rounded-2xl flex items-center justify-center text-2xl mb-6">🛠️</div>
-                <h3 class="text-xl font-bold mb-3 text-white">Suporte & Manutenção</h3>
-                <p class="text-gray-400 leading-relaxed font-light">Precisa mudar um texto? Um banner? Nossa equipe cuida de tudo para você focar apenas no seu negócio.</p>
+            <div class="bg-card p-10 rounded-[32px]">
+                <div class="text-[#FF6B00] mb-6"><svg width="40" height="40" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9h18"/></svg></div>
+                <h3 class="text-xl font-bold mb-4">Google & SEO</h3>
+                <p class="text-gray-400 font-light leading-relaxed">Seu site é construído para ser encontrado. Estrutura otimizada para os robôs do Google desde o primeiro dia.</p>
             </div>
         </div>
     </section>
 
-    <section id="planos" class="py-24 px-6 bg-[#0E0E0E] relative overflow-hidden">
-        <div class="max-w-7xl mx-auto relative z-10 text-center mb-16">
-            <h2 class="text-4xl md:text-6xl font-extrabold tracking-tight text-white mb-6">Escolha o plano ideal</h2>
-            <p class="text-gray-400 max-w-xl mx-auto">Sem taxas ocultas, sem fidelidade. Cancele quando quiser.</p>
+    <section id="planos" class="py-24 px-6 bg-[#0E0E0E]">
+        <div class="max-w-6xl mx-auto text-center mb-16">
+            <h2 class="text-4xl md:text-6xl font-extrabold tracking-tight mb-4 text-white">O site que sua marca merece.</h2>
+            <p class="text-gray-400">Escolha o plano que melhor se adapta ao seu momento.</p>
         </div>
-
         <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             <div class="bg-black/50 border border-white/5 p-10 rounded-[40px] flex flex-col">
-                <span class="text-gray-500 font-bold text-xs uppercase tracking-widest mb-4">Iniciante</span>
+                <span class="text-gray-500 font-bold text-xs uppercase tracking-widest mb-4">Ideal para MEI</span>
                 <div class="text-4xl font-bold text-white mb-6 font-sora">R$ 197<span class="text-sm text-gray-500 font-normal">/mês</span></div>
-                <p class="text-sm text-gray-400 mb-8">Ideal para profissionais liberais e MEIs que precisam de presença rápida.</p>
                 <ul class="space-y-4 text-sm text-gray-300 mb-10 flex-grow">
-                    <li class="flex items-center gap-3 font-medium text-white">✓ Até 3 Páginas</li>
-                    <li class="flex items-center gap-3">✓ Design Responsivo</li>
-                    <li class="flex items-center gap-3">✓ 1 E-mail Profissional</li>
-                    <li class="flex items-center gap-3">✓ WhatsApp Integrado</li>
-                    <li class="flex items-center gap-3 text-gray-600">✗ Blog/Notícias</li>
+                    <li>✓ Até 3 Páginas</li>
+                    <li>✓ Design Responsivo</li>
+                    <li>✓ 1 E-mail Profissional</li>
+                    <li>✓ Suporte Mensal</li>
                 </ul>
                 <a href="https://viskoo.com.br/whatsapp/" class="w-full py-4 rounded-full border border-white/10 hover:bg-white/5 text-center font-bold transition">Começar Agora</a>
             </div>
-
             <div class="bg-black border-2 border-[#FF6B00] p-10 rounded-[40px] flex flex-col relative scale-105 shadow-2xl shadow-[#FF6B00]/10">
-                <div class="absolute -top-5 left-1/2 -translate-x-1/2 bg-[#FF6B00] text-white text-[10px] font-black px-6 py-2 rounded-full uppercase tracking-widest">O Mais Escolhido</div>
+                <div class="absolute -top-5 left-1/2 -translate-x-1/2 bg-[#FF6B00] text-white text-[10px] font-black px-6 py-2 rounded-full uppercase tracking-widest">Mais Escolhido</div>
                 <span class="text-[#FF6B00] font-bold text-xs uppercase tracking-widest mb-4">Empresas em Crescimento</span>
                 <div class="text-5xl font-bold text-white mb-6 font-sora">R$ 347<span class="text-sm text-gray-500 font-normal">/mês</span></div>
-                <p class="text-sm text-gray-400 mb-8">O equilíbrio perfeito entre design, performance e visibilidade no Google.</p>
                 <ul class="space-y-4 text-sm text-gray-300 mb-10 flex-grow">
-                    <li class="flex items-center gap-3 font-medium text-white">✓ Até 6 Páginas Premium</li>
-                    <li class="flex items-center gap-3 font-medium text-white">✓ SEO Técnico Completo</li>
-                    <li class="flex items-center gap-3">✓ 3 E-mails Profissionais</li>
-                    <li class="flex items-center gap-3">✓ Feed Instagram Automático</li>
-                    <li class="flex items-center gap-3 font-medium text-white">✓ Blog para Autoridade</li>
-                    <li class="flex items-center gap-3">✓ Suporte Prioritário</li>
+                    <li class="text-white font-bold">✓ Até 6 Páginas Premium</li>
+                    <li class="text-white font-bold">✓ SEO Técnico Completo</li>
+                    <li>✓ 3 E-mails Profissionais</li>
+                    <li>✓ Blog / Notícias</li>
+                    <li>✓ Suporte Prioritário</li>
                 </ul>
                 <a href="https://viskoo.com.br/whatsapp/" class="w-full py-4 rounded-full orange-gradient text-white text-center font-bold btn-animate">Falar com Consultor</a>
             </div>
-
             <div class="bg-black/50 border border-white/5 p-10 rounded-[40px] flex flex-col">
                 <span class="text-gray-500 font-bold text-xs uppercase tracking-widest mb-4">Robustez Total</span>
                 <div class="text-4xl font-bold text-white mb-6 font-sora">R$ 597<span class="text-sm text-gray-500 font-normal">/mês</span></div>
-                <p class="text-sm text-gray-400 mb-8">Para empresas que dominam o mercado e precisam de atualizações constantes.</p>
                 <ul class="space-y-4 text-sm text-gray-300 mb-10 flex-grow">
-                    <li class="flex items-center gap-3 font-medium text-white">✓ Páginas Ilimitadas</li>
-                    <li class="flex items-center gap-3">✓ E-mails Ilimitados</li>
-                    <li class="flex items-center gap-3">✓ Atualizações Semanais</li>
-                    <li class="flex items-center gap-3">✓ Reunião Estratégica Mensal</li>
-                    <li class="flex items-center gap-3">✓ Criação de Logo Incluso</li>
+                    <li>✓ Páginas Ilimitadas</li>
+                    <li>✓ Manutenção Semanal</li>
+                    <li>✓ E-mails Ilimitados</li>
+                    <li>✓ Criação de Logo</li>
                 </ul>
                 <a href="https://viskoo.com.br/whatsapp/" class="w-full py-4 rounded-full border border-white/10 hover:bg-white/5 text-center font-bold transition">Assinar VIP</a>
             </div>
         </div>
     </section>
 
-    <section id="depoimentos" class="py-24 px-6 max-w-7xl mx-auto">
-        <div class="grid md:grid-cols-2 gap-16 items-center">
-            <div>
-                <span class="text-[#FF6B00] text-sm font-bold tracking-[0.3em] uppercase">Depoimentos</span>
-                <h2 class="text-4xl md:text-5xl font-bold mt-4 tracking-tight leading-tight">Empresas que confiam na <span class="text-[#FF6B00]">Viskoo</span></h2>
-                <p class="text-gray-400 mt-6 font-light text-lg">Não somos apenas uma agência de sites, somos seu braço direito tecnológico.</p>
-            </div>
-            <div class="space-y-6">
-                <div class="bg-card p-8 rounded-3xl italic text-gray-300 font-light border-l-4 border-[#FF6B00]">
-                    "Antes eu não existia no Google. Hoje apareço na primeira página. O investimento se pagou em menos de 30 dias."
-                    <div class="mt-4 not-italic font-bold text-white text-sm">— Amanda Ferreira, CEO da Glow Estética</div>
-                </div>
-                <div class="bg-card p-8 rounded-3xl italic text-gray-300 font-light border-l-4 border-[#FF6B00]">
-                    "O suporte é impecável. Mudamos nossa promoção mensal e o site é atualizado no mesmo dia. Recomendo demais!"
-                    <div class="mt-4 not-italic font-bold text-white text-sm">— Ricardo Santos, Santos Advocacia</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="py-24 px-6 max-w-3xl mx-auto">
-        <h2 class="text-3xl font-bold text-center mb-12">Dúvidas Frequentes</h2>
-        <div class="space-y-4">
-            <details class="bg-card rounded-2xl p-6 group cursor-pointer">
-                <summary class="list-none flex justify-between items-center font-bold text-white uppercase text-xs tracking-widest">
-                    Posso cancelar quando quiser?
-                    <span class="text-[#FF6B00] group-open:rotate-45 transition">+</span>
-                </summary>
-                <p class="text-gray-400 mt-4 text-sm font-light">Sim! Não temos contrato de fidelidade. Você paga mês a mês e pode cancelar a qualquer momento sem qualquer multa.</p>
-            </details>
-            <details class="bg-card rounded-2xl p-6 group cursor-pointer">
-                <summary class="list-none flex justify-between items-center font-bold text-white uppercase text-xs tracking-widest">
-                    O domínio está incluso?
-                    <span class="text-[#FF6B00] group-open:rotate-45 transition">+</span>
-                </summary>
-                <p class="text-gray-400 mt-4 text-sm font-light">A hospedagem está inclusa. O domínio (.com.br) tem o custo de R$ 40/ano direto com o Registro.br, mas nós cuidamos de toda a configuração para você.</p>
-            </details>
-        </div>
-    </section>
-
     <section class="py-32 px-6 text-center bg-gradient-to-t from-[#FF6B00]/20 to-transparent">
-        <h2 class="text-4xl md:text-7xl font-extrabold tracking-tighter mb-8 italic">Seu próximo cliente está no Google.<br><span class="text-[#FF6B00]">Ele vai te encontrar?</span></h2>
+        <h2 class="text-4xl md:text-7xl font-extrabold tracking-tighter mb-8 italic text-white">
+            Seu próximo cliente está no Google.<br>
+            <span class="text-[#FF6B00]">Ele vai te encontrar ou ao seu concorrente?</span>
+        </h2>
         <a href="https://viskoo.com.br/whatsapp/" class="inline-flex orange-gradient text-white px-12 py-6 rounded-full font-black text-xl btn-animate">
-            QUERO MEU SITE AGORA
+            QUERO DOMINAR MEU MERCADO
         </a>
-        <p class="text-gray-500 mt-8 text-sm uppercase tracking-widest font-bold">Inicie sua transformação digital hoje.</p>
+        <p class="text-gray-500 mt-8 text-sm uppercase tracking-widest font-bold">
+            PARE DE SER INVISÍVEL. TENHA O SITE QUE SUA MARCA MERECE.
+        </p>
     </section>
 
     <footer class="py-12 px-6 border-t border-white/5 text-center text-gray-600 text-xs">
-        <div class="text-xl font-extrabold tracking-tighter text-white mb-4">VISKOO<span class="text-[#FF6B00]">.</span></div>
-        <p>© 2024 Viskoo - Sites que vendem. Assinaturas que entregam.</p>
-        <div class="flex justify-center gap-6 mt-6">
-            <a href="#" class="hover:text-white">Termos de Uso</a>
-            <a href="#" class="hover:text-white">Privacidade</a>
-        </div>
+        <img src="../imgs/viskoo-branco.svg" alt="Viskoo Logo" class="h-6 w-auto mx-auto mb-6 opacity-50">
+        <p>© 2024 Viskoo. Todos os direitos reservados.</p>
     </footer>
 
     <a href="https://viskoo.com.br/whatsapp/" target="_blank" class="fixed bottom-8 right-8 z-50 bg-[#25D366] p-4 rounded-full shadow-2xl hover:scale-110 transition btn-animate">
         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
     </a>
 
-    <style>
-        @keyframes marquee {
-            0% { transform: translateX(100%); }
-            100% { transform: translateX(-100%); }
-        }
-        .animate-marquee {
-            animation: marquee 20s linear infinite;
-        }
-    </style>
 </body>
 </html>
