@@ -3,165 +3,257 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Viskoo | Domine seu Mercado com um Site de Elite</title>
+    <title>Viskoo | Sites Profissionais por Assinatura</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Inter', sans-serif; background-color: #080808; color: #F0F0F0; }
         h1, h2, h3, .font-sora { font-family: 'Sora', sans-serif; }
         .orange-gradient { background: linear-gradient(135deg, #FF6B00 0%, #FF8C2A 100%); }
-        .text-orange-glow { color: #FF6B00; text-shadow: 0 0 15px rgba(255, 107, 0, 0.3); }
         .bg-card { background-color: #0E0E0E; border: 1px solid rgba(255,255,255,0.07); }
         .bg-card:hover { border-color: rgba(255, 107, 0, 0.4); transform: translateY(-4px); transition: all 0.3s ease; }
         .hero-glow { position: absolute; top: -200px; left: 50%; transform: translateX(-50%); width: 800px; height: 800px; background: radial-gradient(circle, rgba(255,107,0,0.12) 0%, transparent 70%); pointer-events: none; z-index: 0; }
         .btn-animate { transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1); }
-        .btn-animate:hover { transform: scale(1.05); box-shadow: 0 10px 40px rgba(255,107,0,0.4); }
-        @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
-        .animate-marquee { display: flex; width: 200%; animation: marquee 25s linear infinite; }
+        .btn-animate:hover { transform: scale(1.03); box-shadow: 0 10px 40px rgba(255,107,0,0.3); }
+        details summary::-webkit-details-marker { display: none; }
     </style>
 </head>
 <body class="overflow-x-hidden">
 
-    <nav class="fixed w-full z-50 bg-black/70 backdrop-blur-xl border-b border-white/5 py-4 px-6 md:px-12 flex justify-between items-center">
-        <a href="#">
-            <img src="../imgs/viskoo-branco.svg" alt="Viskoo Logo" class="h-8 w-auto">
-        </a>
-        <div class="hidden md:flex gap-8 text-sm font-medium text-gray-400">
-            <a href="#recursos" class="hover:text-white transition">Diferenciais</a>
+    <nav class="fixed w-full z-50 bg-black/80 backdrop-blur-xl border-b border-white/5 py-4 px-6 md:px-12 flex justify-between items-center">
+        <a href="#"><img src="../imgs/viskoo-branco.svg" alt="Viskoo" class="h-8 w-auto"></a>
+        <div class="hidden md:flex gap-8 text-sm font-medium text-gray-400 uppercase tracking-widest text-[10px]">
+            <a href="#beneficios" class="hover:text-white transition">Benefícios</a>
             <a href="#planos" class="hover:text-white transition">Planos</a>
+            <a href="#incluso" class="hover:text-white transition">O que está incluso</a>
             <a href="#faq" class="hover:text-white transition">FAQ</a>
         </div>
-        <a href="https://viskoo.com.br/whatsapp/" target="_blank" class="bg-[#25D366] hover:bg-[#1ebe5d] text-white px-6 py-2.5 rounded-full text-sm font-bold flex items-center gap-2 transition btn-animate">
-            Falar com Consultor
-        </a>
+        <a href="https://viskoo.com.br/whatsapp/" target="_blank" class="bg-[#25D366] text-white px-5 py-2 rounded-full text-xs font-bold transition btn-animate">Falar com Consultor</a>
     </nav>
 
     <section class="relative min-h-screen flex flex-col items-center justify-center text-center px-6 pt-20">
         <div class="hero-glow"></div>
-        <div class="relative z-10">
-            <div class="inline-flex items-center gap-2 bg-[#FF6B00]/10 border border-[#FF6B00]/30 text-[#FF8C2A] px-4 py-1.5 rounded-full text-xs font-bold mb-8 uppercase tracking-widest animate-pulse">
-                ✦ Design de Elite & Performance Real
-            </div>
-            <h1 class="text-5xl md:text-7xl lg:text-8xl font-extrabold tracking-tighter leading-tight mb-8">
-                Pare de ser invisível.<br>
-                <span class="orange-gradient bg-clip-text text-transparent italic">Domine o seu mercado</span><br>
-                agora.
+        <div class="relative z-10 max-w-5xl">
+            <span class="text-[#FF6B00] font-bold text-xs uppercase tracking-[0.3em] mb-6 block">Site como Serviço</span>
+            <h1 class="text-5xl md:text-7xl lg:text-8xl font-extrabold tracking-tighter leading-tight mb-8 text-white">
+                O Site do seu Negócio,<br>
+                <span class="orange-gradient bg-clip-text text-transparent italic">Sem Taxa de Configuração</span><br>
+                e Sem Dor de Cabeça.
             </h1>
             <p class="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto mb-12 font-light">
-                Tenha um site profissional de alta conversão por uma assinatura que cabe no seu bolso. Sem taxa de setup, sem dor de cabeça e com suporte ilimitado.
+                Design Premium, Hospedagem Inclusa e Suporte Ilimitado por uma mensalidade que cabe no seu bolso.
             </p>
-            <div class="flex flex-col md:flex-row gap-6 justify-center items-center">
-                <a href="#planos" class="orange-gradient text-white px-10 py-5 rounded-full font-bold text-lg flex items-center gap-3 btn-animate">
-                    QUERO MEU SITE AGORA
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                </a>
-            </div>
-            <div class="mt-8 flex items-center justify-center gap-4 text-sm text-gray-500">
-                <span class="flex items-center gap-1">✓ Sem Fidelidade</span>
-                <span class="flex items-center gap-1">✓ Setup Grátis</span>
-                <span class="flex items-center gap-1">✓ Suporte Premium</span>
+            <div class="flex flex-col md:flex-row gap-4 justify-center">
+                <a href="#planos" class="orange-gradient text-white px-10 py-5 rounded-full font-bold text-lg btn-animate">Escolher meu Plano</a>
+                <a href="#beneficios" class="bg-white/5 border border-white/10 text-white px-10 py-5 rounded-full font-bold text-lg hover:bg-white/10 transition">Ver Benefícios</a>
             </div>
         </div>
     </section>
 
-    <div class="bg-card border-y border-white/5 py-6 overflow-hidden">
-        <div class="animate-marquee items-center text-sm font-bold text-gray-500 uppercase tracking-widest gap-12">
-            <span class="flex items-center gap-4">SEO OTIMIZADO <div class="w-2 h-2 rounded-full bg-[#FF6B00]"></div></span>
-            <span class="flex items-center gap-4">DESIGN EXCLUSIVO <div class="w-2 h-2 rounded-full bg-[#FF6B00]"></div></span>
-            <span class="flex items-center gap-4">HOSPEDAGEM INCLUSA <div class="w-2 h-2 rounded-full bg-[#FF6B00]"></div></span>
-            <span class="flex items-center gap-4">SUPORTE ILIMITADO <div class="w-2 h-2 rounded-full bg-[#FF6B00]"></div></span>
-            <span class="flex items-center gap-4">E-MAIL PROFISSIONAL <div class="w-2 h-2 rounded-full bg-[#FF6B00]"></div></span>
-            <span class="flex items-center gap-4">SEO OTIMIZADO <div class="w-2 h-2 rounded-full bg-[#FF6B00]"></div></span>
-            <span class="flex items-center gap-4">DESIGN EXCLUSIVO <div class="w-2 h-2 rounded-full bg-[#FF6B00]"></div></span>
-            <span class="flex items-center gap-4">HOSPEDAGEM INCLUSA <div class="w-2 h-2 rounded-full bg-[#FF6B00]"></div></span>
-            <span class="flex items-center gap-4">SUPORTE ILIMITADO <div class="w-2 h-2 rounded-full bg-[#FF6B00]"></div></span>
+    <section id="beneficios" class="py-24 px-6 max-w-7xl mx-auto">
+        <div class="mb-16">
+            <h2 class="text-3xl md:text-5xl font-bold mb-4">Tudo o que você precisa, sem complicação</h2>
+            <p class="text-gray-400">Um modelo que simplifica a sua vida e entrega resultado desde o primeiro dia.</p>
         </div>
-    </div>
-
-    <section id="recursos" class="py-32 px-6 max-w-7xl mx-auto">
-        <div class="grid md:grid-cols-3 gap-8">
-            <div class="bg-card p-10 rounded-[32px]">
-                <div class="text-[#FF6B00] mb-6"><svg width="40" height="40" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
-                <h3 class="text-xl font-bold mb-4">Autoridade Instantânea</h3>
-                <p class="text-gray-400 font-light leading-relaxed">Não use templates amadores. Tenha um design que comunica o real valor do seu trabalho logo no primeiro segundo.</p>
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="bg-card p-8 rounded-3xl">
+                <div class="text-[#FF6B00] mb-6 text-3xl">⚡</div>
+                <h3 class="text-xl font-bold mb-3">Setup em 7 dias</h3>
+                <p class="text-sm text-gray-500 leading-relaxed">Seu site profissional no ar em apenas 7 dias úteis. Sem meses de espera, sem enrolação.</p>
             </div>
-            <div class="bg-card p-10 rounded-[32px]">
-                <div class="text-[#FF6B00] mb-6"><svg width="40" height="40" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
-                <h3 class="text-xl font-bold mb-4">Velocidade que Converte</h3>
-                <p class="text-gray-400 font-light leading-relaxed">Sites lentos perdem vendas. Nossa infraestrutura garante carregamento em menos de 2 segundos.</p>
+            <div class="bg-card p-8 rounded-3xl">
+                <div class="text-[#FF6B00] mb-6 text-3xl">🔄</div>
+                <h3 class="text-xl font-bold mb-3">Alterações Ilimitadas</h3>
+                <p class="text-sm text-gray-500 leading-relaxed">Precisa mudar um texto, imagem ou seção? Solicite a qualquer momento, sem custo adicional.</p>
             </div>
-            <div class="bg-card p-10 rounded-[32px]">
-                <div class="text-[#FF6B00] mb-6"><svg width="40" height="40" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9h18"/></svg></div>
-                <h3 class="text-xl font-bold mb-4">Google & SEO</h3>
-                <p class="text-gray-400 font-light leading-relaxed">Seu site é construído para ser encontrado. Estrutura otimizada para os robôs do Google desde o primeiro dia.</p>
+            <div class="bg-card p-8 rounded-3xl">
+                <div class="text-[#FF6B00] mb-6 text-3xl">☁️</div>
+                <h3 class="text-xl font-bold mb-3">Hospedagem Premium</h3>
+                <p class="text-sm text-gray-500 leading-relaxed">Servidores rápidos e seguros inclusos no plano. Você não precisa se preocupar com nada técnico.</p>
+            </div>
+            <div class="bg-card p-8 rounded-3xl">
+                <div class="text-[#FF6B00] mb-6 text-3xl">📈</div>
+                <h3 class="text-xl font-bold mb-3">SEO Otimizado</h3>
+                <p class="text-sm text-gray-500 leading-relaxed">Seu site já nasce preparado para o Google. Estrutura técnica, velocidade e boas práticas.</p>
             </div>
         </div>
     </section>
 
     <section id="planos" class="py-24 px-6 bg-[#0E0E0E]">
         <div class="max-w-6xl mx-auto text-center mb-16">
-            <h2 class="text-4xl md:text-6xl font-extrabold tracking-tight mb-4 text-white">O site que sua marca merece.</h2>
-            <p class="text-gray-400">Escolha o plano que melhor se adapta ao seu momento.</p>
+            <h2 class="text-4xl md:text-6xl font-extrabold mb-4">Escolha o plano ideal</h2>
+            <p class="text-gray-400">Sem taxa de configuração. Sem surpresas. Cancele quando quiser.</p>
         </div>
-        <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            <div class="bg-black/50 border border-white/5 p-10 rounded-[40px] flex flex-col">
-                <span class="text-gray-500 font-bold text-xs uppercase tracking-widest mb-4">Ideal para MEI</span>
-                <div class="text-4xl font-bold text-white mb-6 font-sora">R$ 197<span class="text-sm text-gray-500 font-normal">/mês</span></div>
-                <ul class="space-y-4 text-sm text-gray-300 mb-10 flex-grow">
-                    <li>✓ Até 3 Páginas</li>
-                    <li>✓ Design Responsivo</li>
+        
+        <div class="grid md:grid-cols-3 gap-8 max-w-7xl mx-auto">
+            <div class="bg-black/40 border border-white/5 p-10 rounded-[40px] flex flex-col">
+                <h3 class="text-2xl font-bold mb-2">Start</h3>
+                <p class="text-gray-500 text-sm mb-6">Ideal para Landing Pages e sites simples.</p>
+                <div class="text-5xl font-bold mb-8 font-sora">R$ 397<span class="text-lg text-gray-500 font-normal">/mês</span></div>
+                <ul class="space-y-4 text-sm text-gray-400 mb-10 flex-grow">
+                    <li>✓ Landing Page ou Site de 1 página</li>
+                    <li>✓ Abre em qualquer dispositivo</li>
+                    <li>✓ Hospedagem Premium Inclusa</li>
+                    <li>✓ SSL Grátis (Site Seguro)</li>
                     <li>✓ 1 E-mail Profissional</li>
-                    <li>✓ Suporte Mensal</li>
+                    <li>✓ Alterações ilimitadas de texto</li>
                 </ul>
-                <a href="https://viskoo.com.br/whatsapp/" class="w-full py-4 rounded-full border border-white/10 hover:bg-white/5 text-center font-bold transition">Começar Agora</a>
+                <a href="https://viskoo.com.br/cadastro/?projeto=Plano%20Start&valortotal=397,00&parcelamento=Assinatura%20mensal" target="_blank" class="w-full py-4 rounded-full border border-white/10 text-center font-bold hover:bg-white/5 transition">Começar Agora</a>
             </div>
+
             <div class="bg-black border-2 border-[#FF6B00] p-10 rounded-[40px] flex flex-col relative scale-105 shadow-2xl shadow-[#FF6B00]/10">
-                <div class="absolute -top-5 left-1/2 -translate-x-1/2 bg-[#FF6B00] text-white text-[10px] font-black px-6 py-2 rounded-full uppercase tracking-widest">Mais Escolhido</div>
-                <span class="text-[#FF6B00] font-bold text-xs uppercase tracking-widest mb-4">Empresas em Crescimento</span>
-                <div class="text-5xl font-bold text-white mb-6 font-sora">R$ 347<span class="text-sm text-gray-500 font-normal">/mês</span></div>
+                <div class="absolute -top-5 left-1/2 -translate-x-1/2 orange-gradient text-white text-[10px] font-black px-6 py-2 rounded-full uppercase">Mais Popular</div>
+                <h3 class="text-2xl font-bold mb-2">Business</h3>
+                <p class="text-gray-400 text-sm mb-6">Sites institucionais completos com Blog.</p>
+                <div class="text-5xl font-bold mb-8 font-sora text-white">R$ 597<span class="text-lg text-gray-500 font-normal">/mês</span></div>
                 <ul class="space-y-4 text-sm text-gray-300 mb-10 flex-grow">
-                    <li class="text-white font-bold">✓ Até 6 Páginas Premium</li>
-                    <li class="text-white font-bold">✓ SEO Técnico Completo</li>
-                    <li>✓ 3 E-mails Profissionais</li>
-                    <li>✓ Blog / Notícias</li>
-                    <li>✓ Suporte Prioritário</li>
+                    <li class="font-bold text-white">✓ Site Institucional até 10 páginas</li>
+                    <li class="font-bold text-white">✓ Blog Integrado</li>
+                    <li>✓ Abre em qualquer dispositivo</li>
+                    <li>✓ 5 E-mails Profissionais</li>
+                    <li>✓ SEO Otimizado</li>
+                    <li class="font-bold text-white">✓ Suporte Prioritário</li>
                 </ul>
-                <a href="https://viskoo.com.br/whatsapp/" class="w-full py-4 rounded-full orange-gradient text-white text-center font-bold btn-animate">Falar com Consultor</a>
+                <a href="https://viskoo.com.br/cadastro/?projeto=Plano%20Business&valortotal=597,00&parcelamento=Assinatura%20mensal" target="_blank" class="w-full py-4 rounded-full orange-gradient text-white text-center font-bold btn-animate">Começar Agora</a>
             </div>
-            <div class="bg-black/50 border border-white/5 p-10 rounded-[40px] flex flex-col">
-                <span class="text-gray-500 font-bold text-xs uppercase tracking-widest mb-4">Robustez Total</span>
-                <div class="text-4xl font-bold text-white mb-6 font-sora">R$ 597<span class="text-sm text-gray-500 font-normal">/mês</span></div>
-                <ul class="space-y-4 text-sm text-gray-300 mb-10 flex-grow">
+
+            <div class="bg-black/40 border border-white/5 p-10 rounded-[40px] flex flex-col">
+                <h3 class="text-2xl font-bold mb-2">Performance</h3>
+                <p class="text-gray-500 text-sm mb-6">E-commerce e projetos de alta escala.</p>
+                <div class="text-5xl font-bold mb-8 font-sora">R$ 997<span class="text-lg text-gray-500 font-normal">/mês</span></div>
+                <ul class="space-y-4 text-sm text-gray-400 mb-10 flex-grow">
+                    <li>✓ E-commerce Completo</li>
                     <li>✓ Páginas Ilimitadas</li>
-                    <li>✓ Manutenção Semanal</li>
-                    <li>✓ E-mails Ilimitados</li>
-                    <li>✓ Criação de Logo</li>
+                    <li>✓ 10 E-mails Profissionais</li>
+                    <li>✓ SEO Avançado</li>
+                    <li>✓ Gateways de Pagamento</li>
+                    <li class="font-bold text-white">✓ Suporte Dedicado</li>
                 </ul>
-                <a href="https://viskoo.com.br/whatsapp/" class="w-full py-4 rounded-full border border-white/10 hover:bg-white/5 text-center font-bold transition">Assinar VIP</a>
+                <a href="https://viskoo.com.br/cadastro/?projeto=Plano%20Performance&valortotal=997,00&parcelamento=Assinatura%20mensal" target="_blank" class="w-full py-4 rounded-full border border-white/10 text-center font-bold hover:bg-white/5 transition">Começar Agora</a>
             </div>
+        </div>
+    </section>
+
+    <section class="py-24 px-6 max-w-5xl mx-auto">
+        <div class="text-center mb-16">
+            <span class="text-[#FF6B00] font-bold text-xs uppercase tracking-widest">Diferencial</span>
+            <h2 class="text-3xl md:text-5xl font-bold mt-4">Agência Tradicional vs Viskoo</h2>
+        </div>
+        <div class="overflow-x-auto">
+            <table class="w-full text-left border-collapse">
+                <thead>
+                    <tr class="border-b border-white/10 text-xs uppercase text-gray-500">
+                        <th class="py-4 font-medium">Comparativo</th>
+                        <th class="py-4 font-medium">Agência Tradicional</th>
+                        <th class="py-4 font-bold text-[#FF6B00]">Viskoo</th>
+                    </tr>
+                </thead>
+                <tbody class="text-sm">
+                    <tr class="border-b border-white/5"><td class="py-6 text-gray-400">Entrega</td><td>2 a 6 meses</td><td class="text-white font-bold">7 dias úteis</td></tr>
+                    <tr class="border-b border-white/5"><td class="py-6 text-gray-400">Taxa de Setup</td><td>R$ 3.000 a R$ 15k+</td><td class="text-white font-bold text-xl">R$ 0</td></tr>
+                    <tr class="border-b border-white/5"><td class="py-6 text-gray-400">Alterações</td><td>Cobradas à parte</td><td class="text-white font-bold">Ilimitadas</td></tr>
+                    <tr class="border-b border-white/5"><td class="py-6 text-gray-400">Suporte</td><td>Lento / Chamados</td><td class="text-white font-bold text-orange-glow">Rápido e Direto</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section id="incluso" class="py-24 px-6 bg-white/[0.02]">
+        <div class="max-w-7xl mx-auto text-center mb-16">
+            <h2 class="text-4xl font-bold mb-4">O que você recebe em todos os planos</h2>
+            <p class="text-gray-400">Cada detalhe pensado para você focar no que importa: o seu negócio.</p>
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 max-w-7xl mx-auto text-center">
+            <div class="p-4">
+                <div class="text-[#FF6B00] text-2xl mb-4">🔒</div>
+                <h4 class="font-bold text-sm mb-2">SSL Grátis</h4>
+                <p class="text-xs text-gray-500">Site seguro e confiável.</p>
+            </div>
+            <div class="p-4">
+                <div class="text-[#FF6B00] text-2xl mb-4">📧</div>
+                <h4 class="font-bold text-sm mb-2">E-mails Profissionais</h4>
+                <p class="text-xs text-gray-500">@suaempresa.com.br</p>
+            </div>
+            <div class="p-4">
+                <div class="text-[#FF6B00] text-2xl mb-4">🛠️</div>
+                <h4 class="font-bold text-sm mb-2">Manutenção</h4>
+                <p class="text-xs text-gray-500">Backups e atualizações.</p>
+            </div>
+            <div class="p-4">
+                <div class="text-[#FF6B00] text-2xl mb-4">📱</div>
+                <h4 class="font-bold text-sm mb-2">Multi-Dispositivo</h4>
+                <p class="text-xs text-gray-500">Celulares e tablets.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq" class="py-24 px-6 max-w-3xl mx-auto">
+        <h2 class="text-3xl font-bold text-center mb-12">Perguntas Frequentes</h2>
+        <div class="space-y-4">
+            <details class="bg-card rounded-2xl p-6 cursor-pointer group">
+                <summary class="flex justify-between items-center font-bold text-white uppercase text-[10px] tracking-widest">
+                    O site é meu?
+                    <span class="text-[#FF6B00] group-open:rotate-45 transition">+</span>
+                </summary>
+                <p class="text-gray-500 mt-4 text-sm font-light">O site é fornecido como um serviço. Enquanto sua assinatura estiver ativa, você tem o site completo, e-mails e suporte. Se cancelar, o serviço é interrompido.</p>
+            </details>
+            <details class="bg-card rounded-2xl p-6 cursor-pointer group">
+                <summary class="flex justify-between items-center font-bold text-white uppercase text-[10px] tracking-widest">
+                    Posso cancelar quando quiser?
+                    <span class="text-[#FF6B00] group-open:rotate-45 transition">+</span>
+                </summary>
+                <p class="text-gray-500 mt-4 text-sm font-light">Sim! Não temos contrato de fidelidade. Você pode sair quando quiser sem pagar multas.</p>
+            </details>
+            <details class="bg-card rounded-2xl p-6 cursor-pointer group">
+                <summary class="flex justify-between items-center font-bold text-white uppercase text-[10px] tracking-widest">
+                    Quanto tempo leva para ficar pronto?
+                    <span class="text-[#FF6B00] group-open:rotate-45 transition">+</span>
+                </summary>
+                <p class="text-gray-500 mt-4 text-sm font-light">Em média, entregamos sua primeira versão em apenas 7 dias úteis após o envio dos materiais.</p>
+            </details>
         </div>
     </section>
 
     <section class="py-32 px-6 text-center bg-gradient-to-t from-[#FF6B00]/20 to-transparent">
-        <h2 class="text-4xl md:text-7xl font-extrabold tracking-tighter mb-8 italic text-white">
-            Seu próximo cliente está no Google.<br>
-            <span class="text-[#FF6B00]">Ele vai te encontrar ou ao seu concorrente?</span>
-        </h2>
-        <a href="https://viskoo.com.br/whatsapp/" class="inline-flex orange-gradient text-white px-12 py-6 rounded-full font-black text-xl btn-animate">
-            QUERO DOMINAR MEU MERCADO
-        </a>
-        <p class="text-gray-500 mt-8 text-sm uppercase tracking-widest font-bold">
-            PARE DE SER INVISÍVEL. TENHA O SITE QUE SUA MARCA MERECE.
-        </p>
+        <h2 class="text-4xl md:text-6xl font-extrabold mb-8 text-white max-w-4xl mx-auto">Pronto para ter o site que seu negócio merece?</h2>
+        <p class="text-gray-400 mb-12 max-w-2xl mx-auto">Pare de perder clientes com um site amador. Comece hoje com a Viskoo.</p>
+        <div class="flex flex-col md:flex-row gap-4 justify-center">
+            <a href="#planos" class="orange-gradient text-white px-12 py-5 rounded-full font-black text-xl btn-animate">Escolher meu Plano</a>
+            <a href="https://viskoo.com.br/whatsapp/" target="_blank" class="border border-white/20 text-white px-12 py-5 rounded-full font-bold">Falar com Consultor</a>
+        </div>
+        <p class="text-gray-600 mt-8 text-xs uppercase tracking-widest">Sem taxa de configuração. Cancele quando quiser.</p>
     </section>
 
-    <footer class="py-12 px-6 border-t border-white/5 text-center text-gray-600 text-xs">
-        <img src="../imgs/viskoo-branco.svg" alt="Viskoo Logo" class="h-6 w-auto mx-auto mb-6 opacity-50">
-        <p>© 2024 Viskoo. Todos os direitos reservados.</p>
+    <footer class="py-20 px-6 border-t border-white/5 bg-black">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-4 gap-12">
+            <div class="col-span-2">
+                <img src="../imgs/viskoo-branco.svg" alt="Viskoo" class="h-8 mb-6">
+                <p class="text-gray-500 text-sm max-w-sm">Sites Profissionais por Assinatura. Design Premium, hospedagem inclusa e suporte ilimitado por uma mensalidade previsível.</p>
+            </div>
+            <div>
+                <h4 class="text-white font-bold mb-6">Links</h4>
+                <ul class="text-gray-500 text-sm space-y-4">
+                    <li><a href="#beneficios" class="hover:text-[#FF6B00]">Benefícios</a></li>
+                    <li><a href="#planos" class="hover:text-[#FF6B00]">Planos</a></li>
+                    <li><a href="#faq" class="hover:text-[#FF6B00]">FAQ</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white font-bold mb-6">Contato</h4>
+                <ul class="text-gray-500 text-sm space-y-4 font-mono">
+                    <li>contato@viskoo.com.br</li>
+                    <li>Instagram</li>
+                    <li>LinkedIn</li>
+                </ul>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto mt-20 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center text-[10px] text-gray-600 uppercase tracking-widest">
+            <p>© 2026 Viskoo. Todos os direitos reservados.</p>
+        </div>
     </footer>
 
     <a href="https://viskoo.com.br/whatsapp/" target="_blank" class="fixed bottom-8 right-8 z-50 bg-[#25D366] p-4 rounded-full shadow-2xl hover:scale-110 transition btn-animate">
-        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
     </a>
 
 </body>
