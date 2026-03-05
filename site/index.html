@@ -81,9 +81,9 @@
       opacity: 1;
       transform: translateY(0);
     }
-    
+
     .logo-viskoo {
-      height: 32px;
+      height: 28px;
       width: auto;
     }
   </style>
@@ -109,6 +109,18 @@
       <button id="mobile-toggle" class="text-foreground md:hidden" aria-label="Abrir menu">
         <i data-lucide="menu" class="w-6 h-6"></i>
       </button>
+    </div>
+
+    <div id="mobile-menu" class="hidden border-t border-border/50 bg-background/95 backdrop-blur-xl md:hidden">
+      <div class="flex flex-col gap-4 px-6 py-6">
+        <a href="#beneficios" class="text-sm text-muted-foreground transition-colors hover:text-foreground mobile-link">Benefícios</a>
+        <a href="#planos" class="text-sm text-muted-foreground transition-colors hover:text-foreground mobile-link">Planos</a>
+        <a href="#incluso" class="text-sm text-muted-foreground transition-colors hover:text-foreground mobile-link">O que está incluso</a>
+        <a href="#faq" class="text-sm text-muted-foreground transition-colors hover:text-foreground mobile-link">FAQ</a>
+        <a href="#planos" class="mt-2 rounded-lg bg-primary px-5 py-3 text-center text-sm font-semibold text-primary-foreground mobile-link">
+          Escolher meu Plano
+        </a>
+      </div>
     </div>
   </nav>
 
@@ -268,7 +280,7 @@
       <div class="flex items-center gap-2">
         <img src="../imgs/viskoo-branco.svg" alt="Viskoo" class="h-6 w-auto" />
       </div>
-      <p id="footer-year" class="text-sm text-muted-foreground">
+      <p class="text-sm text-muted-foreground">
         © 2026 Viskoo. Todos os direitos reservados.
       </p>
       <div class="flex gap-6">
@@ -280,17 +292,25 @@
   </footer>
 
   <script>
-    // Initialize Lucide
+    // Inicia os ícones Lucide
     lucide.createIcons();
 
-    // ── Mobile Menu Toggle ──
+    // Menu Mobile
     const mobileToggle = document.getElementById('mobile-toggle');
     const mobileMenu = document.getElementById('mobile-menu');
+    const mobileLinks = document.querySelectorAll('.mobile-link');
+
     mobileToggle.addEventListener('click', () => {
       mobileMenu.classList.toggle('hidden');
     });
 
-    // ── FAQ Logic ──
+    mobileLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+      });
+    });
+
+    // FAQ Dados
     const faqData = [
       { q: "O site é meu ou da Viskoo?", a: "O site é desenvolvido para o seu negócio. Enquanto mantiver a assinatura ativa, você tem direito ao uso total, suporte e atualizações. Caso queira cancelar, você não possui taxas de fidelidade." },
       { q: "Posso usar meu próprio domínio?", a: "Sim! Podemos configurar o seu domínio atual (.com.br, .com, etc) ou ajudamos você a registrar um novo." },
@@ -323,8 +343,7 @@
 
     renderFaq();
 
-    // ── Scroll reveal (IntersectionObserver) ──
-    const observerOptions = { threshold: 0.15 };
+    // Scroll reveal
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -332,7 +351,7 @@
           entry.target.classList.remove('sr-hidden');
         }
       });
-    }, observerOptions);
+    }, { threshold: 0.15 });
 
     document.querySelectorAll('.sr-hidden').forEach(el => observer.observe(el));
   </script>
