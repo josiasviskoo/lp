@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StreamControl — Gestão de TV Corporativa</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #000; color: #fff; }
+        .apple-gradient {
+            background: linear-gradient(180deg, #ffffff 0%, #a1a1a6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .btn-apple {
+            background-color: #0071e3;
+            transition: all 0.3s ease;
+        }
+        .btn-apple:hover {
+            background-color: #0077ed;
+            transform: scale(1.02);
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <nav class="fixed w-full z-50 bg-black/80 backdrop-blur-md border-b border-white/10">
+        <div class="max-w-5xl mx-auto px-6 h-12 flex items-center justify-between">
+            <span class="text-xl font-semibold tracking-tight">StreamControl</span>
+            <div class="space-x-8 text-sm text-gray-400 hidden md:flex">
+                <a href="#features" class="hover:text-white transition">Funcionalidades</a>
+                <a href="#setup" class="hover:text-white transition">Como funciona</a>
+                <a href="#pricing" class="hover:text-white transition">Preço</a>
+            </div>
+            <a href="#pricing" class="btn-apple text-white px-4 py-1 rounded-full text-xs font-medium">Assinar</a>
+        </div>
+    </nav>
+
+    <section class="pt-32 pb-20 px-6 text-center">
+        <h2 class="text-sm font-semibold text-blue-500 mb-4 tracking-widest uppercase">Novo</h2>
+        <h1 class="text-5xl md:text-7xl font-semibold tracking-tight apple-gradient mb-6">
+            Suas TVs. <br>Sob total controle.
+        </h1>
+        <p class="text-xl md:text-2xl text-gray-400 max-w-2xl mx-auto mb-10 font-light">
+            Gerencie o conteúdo de todas as suas lojas de forma remota, simples e instantânea.
+        </p>
+        <div class="flex justify-center gap-4">
+            <a href="#pricing" class="btn-apple px-8 py-3 rounded-full text-lg font-medium">Começar agora</a>
+        </div>
+    </section>
+
+    <section class="max-w-6xl mx-auto px-6 mb-32">
+        <div class="glass-card rounded-3xl p-4 md:p-8 aspect-video flex items-center justify-center overflow-hidden">
+            <div class="relative w-full h-full bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl flex items-center justify-center border border-white/10 shadow-2xl">
+                <div class="text-center">
+                    <div class="inline-block p-4 rounded-full bg-white/5 mb-4">
+                        <svg class="w-12 h-12 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                    </div>
+                    <p class="text-gray-500 font-mono text-sm">tv.seusite.com/loja-01</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="features" class="max-w-5xl mx-auto px-6 py-20">
+        <div class="grid md:grid-cols-3 gap-12">
+            <div>
+                <h3 class="text-2xl font-semibold mb-4 text-white">Gestão Centralizada</h3>
+                <p class="text-gray-400 leading-relaxed">O marketing controla tudo. Um único painel para atualizar vídeos em todas as lojas simultaneamente.</p>
+            </div>
+            <div>
+                <h3 class="text-2xl font-semibold mb-4 text-white">URL Pública</h3>
+                <p class="text-gray-400 leading-relaxed">Não precisa de hardware caro. Basta abrir o link no navegador de qualquer Smart TV.</p>
+            </div>
+            <div>
+                <h3 class="text-2xl font-semibold mb-4 text-white">Escala Infinita</h3>
+                <p class="text-gray-400 leading-relaxed">10 ou 1.000 TVs? Não importa. Adicione quantas telas precisar sem custos adicionais por ponto.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="setup" class="bg-white text-black py-24 px-6">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-4xl md:text-6xl font-semibold tracking-tight mb-8">Tão simples que <br>parece mágica.</h2>
+            <div class="grid md:grid-cols-3 gap-8 text-left mt-16">
+                <div class="border-t border-gray-200 pt-6">
+                    <span class="text-5xl font-light text-gray-300">01</span>
+                    <h4 class="text-xl font-semibold mt-4">Suba o vídeo</h4>
+                    <p class="text-gray-500 mt-2">Faça o upload do conteúdo na nossa plataforma web.</p>
+                </div>
+                <div class="border-t border-gray-200 pt-6">
+                    <span class="text-5xl font-light text-gray-300">02</span>
+                    <h4 class="text-xl font-semibold mt-4">Gere o link</h4>
+                    <p class="text-gray-500 mt-2">Cada TV ou Loja recebe uma URL única e inteligente.</p>
+                </div>
+                <div class="border-t border-gray-200 pt-6">
+                    <span class="text-5xl font-light text-gray-300">03</span>
+                    <h4 class="text-xl font-semibold mt-4">Dê o Play</h4>
+                    <p class="text-gray-500 mt-2">Abra o link na TV e pronto. Gestão em tempo real.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="pricing" class="py-32 px-6">
+        <div class="max-w-3xl mx-auto glass-card rounded-[2.5rem] p-12 text-center border-blue-500/30 shadow-[0_0_50px_rgba(0,113,227,0.15)]">
+            <h2 class="text-3xl font-semibold mb-2">Plano Único.</h2>
+            <p class="text-gray-400 mb-8">Tudo o que você precisa para dominar suas telas.</p>
+            <div class="flex justify-center items-baseline mb-8">
+                <span class="text-2xl font-light">R$</span>
+                <span class="text-7xl font-bold tracking-tighter">147</span>
+                <span class="text-xl text-gray-500">/mês</span>
+            </div>
+            <ul class="text-left max-w-xs mx-auto space-y-4 mb-10 text-gray-300">
+                <li class="flex items-center gap-3">
+                    <svg class="text-blue-500 w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path></svg>
+                    TVs Ilimitadas
+                </li>
+                <li class="flex items-center gap-3">
+                    <svg class="text-blue-500 w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path></svg>
+                    Lojas Ilimitadas
+                </li>
+                <li class="flex items-center gap-3">
+                    <svg class="text-blue-500 w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path></svg>
+                    Gestão Remota via Dashboard
+                </li>
+            </ul>
+            <button class="btn-apple w-full py-4 rounded-2xl text-xl font-semibold shadow-lg shadow-blue-500/20">
+                Começar agora
+            </button>
+            <p class="text-gray-500 text-sm mt-6">Cancele quando quiser. Sem taxas de instalação.</p>
+        </div>
+    </section>
+
+    <footer class="py-12 border-t border-white/10 text-center text-gray-500 text-sm">
+        <p>&copy; 2024 StreamControl. A revolução do Digital Signage.</p>
+    </footer>
+
+</body>
+</html>
